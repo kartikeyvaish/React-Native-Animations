@@ -2,9 +2,9 @@
 
 A repo for some React Native Animations that I've practised. These animations are highly inspired by [Catalin Miron](https://www.youtube.com/c/CatalinMironDev/videos) and [Enzo Manuel Mangano AKA Reactiive](https://www.youtube.com/c/Reactiive).
 
-## [Clock](https://github.com/kartikeyvaish/Animations/tree/main/animations/Clock) 
+## [Clock](https://github.com/kartikeyvaish/Animations/tree/main/animations/Clock)
 
-####  This is a example of a clock that shows the current time and animates accordingly. Uses `react-native-reanimated v2` and `day.js` for the implementation.
+#### This is a example of a clock that shows the current time and animates accordingly. Uses `react-native-reanimated v2` and `day.js` for the implementation.
 
 https://user-images.githubusercontent.com/55032587/158451129-02952255-f257-4270-8151-465afac19cbb.mp4
 
@@ -32,3 +32,8 @@ https://user-images.githubusercontent.com/55032587/161367819-c2959cf2-358e-48fe-
 
 https://user-images.githubusercontent.com/55032587/161367821-cc73085e-251f-4d37-87da-b6b19d84b0a8.mp4
 
+## [Parallax Caraousel](https://github.com/kartikeyvaish/Animations/tree/main/animations/ParallaxCaraousel)
+
+https://user-images.githubusercontent.com/55032587/161412712-fd15df38-2978-4a8b-88af-ee8e85a84bf6.mp4
+
+https://user-images.githubusercontent.com/55032587/161412709-1fc158dc-9e87-4590-9df0-b883d4b3051b.mp4
