@@ -15,6 +15,7 @@ function HomeScreen({ navigation }: AppScreenProps<"HomeScreen">) {
       <FlatList
         data={components}
         keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <MenuCard
             title={item.name}
