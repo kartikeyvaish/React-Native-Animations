@@ -28,6 +28,21 @@ const components: any = [
         id: "6",
         name: "Breathing Loader",
         screen: "BreathingLoader",
+    },
+    {
+        id: "7",
+        name: "Animating Stack",
+        screen: "AnimatingStack",
+    },
+    {
+        id: "8",
+        name: "Tally Counter",
+        screen: "TallyCounter",
+    },
+    {
+        id: "9",
+        name: "Volume Slider",
+        screen: "VolumeSlider",
     }
 ]
 
