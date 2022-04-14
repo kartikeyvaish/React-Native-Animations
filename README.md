@@ -37,3 +37,11 @@ https://user-images.githubusercontent.com/55032587/161367821-cc73085e-251f-4d37-
 https://user-images.githubusercontent.com/55032587/161412712-fd15df38-2978-4a8b-88af-ee8e85a84bf6.mp4
 
 https://user-images.githubusercontent.com/55032587/161412709-1fc158dc-9e87-4590-9df0-b883d4b3051b.mp4
+
+## [Volume Slider](https://github.com/kartikeyvaish/Animations/tree/main/animations/VolumeSlider)
+
+https://user-images.githubusercontent.com/55032587/163461562-3d9ae46c-4247-4379-a15e-8cc8a94d4089.mp4
+
+https://user-images.githubusercontent.com/55032587/163461573-f40ca7d5-9afb-4f17-9a8d-caaa740bd453.mp4
+
+
