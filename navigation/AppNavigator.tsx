@@ -15,6 +15,7 @@ import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
+import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
@@ -40,6 +41,7 @@ function AppNavigator() {
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
+      <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />

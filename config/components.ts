@@ -43,6 +43,11 @@ const components: any = [
         id: "9",
         name: "Volume Slider",
         screen: "VolumeSlider",
+    },
+    {
+        id: "10",
+        name: "ProgressDots",
+        screen: "ProgressDots",
     }
 ]
 

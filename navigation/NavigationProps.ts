@@ -13,6 +13,7 @@ export type AppStackParamsList = {
     ClockLoader: undefined;
     MoviesSlider: undefined;
     ParallaxCaraousel: undefined;
+    ProgressDots: undefined;
     Ringing: undefined;
     TallyCounter: undefined;
     VolumeSlider: undefined;
