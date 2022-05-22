@@ -7,10 +7,10 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 export type AppStackParamsList = {
     // App Stack Screens
     HomeScreen: undefined;
-    AnimatingStack: undefined;
     BreathingLoader: undefined;
     Clock: undefined;
     ClockLoader: undefined;
+    MenuToggler: undefined;
     MoviesSlider: undefined;
     ParallaxCaraousel: undefined;
     ProgressDots: undefined;
