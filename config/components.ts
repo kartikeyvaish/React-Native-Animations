@@ -30,11 +30,6 @@ const components: any = [
         screen: "BreathingLoader",
     },
     {
-        id: "7",
-        name: "Animating Stack",
-        screen: "AnimatingStack",
-    },
-    {
         id: "8",
         name: "Tally Counter",
         screen: "TallyCounter",
@@ -46,8 +41,13 @@ const components: any = [
     },
     {
         id: "10",
-        name: "ProgressDots",
+        name: "Progress Dots",
         screen: "ProgressDots",
+    },
+    {
+        id: "11",
+        name: "Menu Toggler",
+        screen: "MenuToggler",
     }
 ]
 
