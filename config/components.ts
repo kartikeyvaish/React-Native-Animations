@@ -48,6 +48,16 @@ const components: any = [
         id: "11",
         name: "Menu Toggler",
         screen: "MenuToggler",
+    },
+    {
+        id: "12",
+        name: "Animating Slider",
+        screen: "AnimatingSlider",
+    },
+    {
+        id: "13",
+        name: "Credit Card",
+        screen: "CreditCard",
     }
 ]
 
