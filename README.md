@@ -25,3 +25,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [11. Animating Slider](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedSlider)
 
 ## [12. Credit Card](https://github.com/kartikeyvaish/Animations/tree/main/animations/CreditCard)
+
+## [13. List Remover](https://github.com/kartikeyvaish/Animations/tree/main/animations/ListRemover)
