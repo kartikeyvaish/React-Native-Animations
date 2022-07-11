@@ -14,6 +14,7 @@ import BreathingLoader from "../animations/BreathingLoader/BreathingLoader";
 import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
 import CreditCard from "../animations/CreditCard/CreditCard";
+import ListRemover from "../animations/ListRemover/ListRemover";
 import MenuToggler from "../animations/MenuToggler/MenuToggler";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
@@ -42,6 +43,7 @@ function AppNavigator() {
       <Stack.Screen name={"Clock"} component={Clock} />
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
+      <Stack.Screen name={"ListRemover"} component={ListRemover} />
       <Stack.Screen name={"MenuToggler"} component={MenuToggler} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />

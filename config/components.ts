@@ -58,6 +58,11 @@ const components: any = [
         id: "13",
         name: "Credit Card",
         screen: "CreditCard",
+    },
+    {
+        id: "14",
+        name: "List Remover",
+        screen: "ListRemover",
     }
 ]
 

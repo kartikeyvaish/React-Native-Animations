@@ -12,6 +12,7 @@ export type AppStackParamsList = {
     Clock: undefined;
     ClockLoader: undefined;
     CreditCard: undefined;
+    ListRemover: undefined;
     MenuToggler: undefined;
     MoviesSlider: undefined;
     ParallaxCaraousel: undefined;
