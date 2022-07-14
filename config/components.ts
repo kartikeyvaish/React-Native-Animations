@@ -63,6 +63,11 @@ const components: any = [
         id: "14",
         name: "List Remover",
         screen: "ListRemover",
+    },
+    {
+        id: "15",
+        name: "WhatsApp Mic",
+        screen: "WhatsAppMic",
     }
 ]
 

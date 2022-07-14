@@ -20,6 +20,7 @@ export type AppStackParamsList = {
     Ringing: undefined;
     TallyCounter: undefined;
     VolumeSlider: undefined;
+    WhatsAppMic: undefined;
 };
 
 // Props for App Navigator's Screens

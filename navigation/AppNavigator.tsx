@@ -22,6 +22,7 @@ import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
+import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -51,6 +52,7 @@ function AppNavigator() {
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
+      <Stack.Screen name={"WhatsAppMic"} component={WhatsAppMic} />
     </Stack.Navigator>
   );
 }
