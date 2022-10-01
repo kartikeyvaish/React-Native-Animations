@@ -83,6 +83,11 @@ const components: any = [
         id: "18",
         name: "Ripple Effect",
         screen: "RippleEffect",
+    },
+    {
+        id: "19",
+        name: "OnBoarding Screen",
+        screen: "OnBoarding",
     }
 ]
 

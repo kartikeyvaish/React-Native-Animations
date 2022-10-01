@@ -16,6 +16,7 @@ import ListRemover from "../animations/ListRemover/ListRemover";
 import GridMagnification from "../animations/Grid Magnification/GridMagnification";
 import MenuToggler from "../animations/MenuToggler/MenuToggler";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
+import OnBoarding from "../animations/Onboarding/OnBoarding";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
@@ -49,6 +50,7 @@ function AppNavigator() {
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
       <Stack.Screen name={"MenuToggler"} component={MenuToggler} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
+      <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
