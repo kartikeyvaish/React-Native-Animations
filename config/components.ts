@@ -78,6 +78,11 @@ const components: any = [
         id: "17",
         name: "Color Picker",
         screen: "ColorPicker",
+    },
+    {
+        id: "18",
+        name: "Ripple Effect",
+        screen: "RippleEffect",
     }
 ]
 

@@ -10,6 +10,7 @@ import AnimatingSlider from "../animations/AnimatedSlider/AnimatedSlider";
 import BreathingLoader from "../animations/BreathingLoader/BreathingLoader";
 import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
+import ColorPicker from "../animations/ColorPicker/ColorPicker";
 import CreditCard from "../animations/CreditCard/CreditCard";
 import ListRemover from "../animations/ListRemover/ListRemover";
 import GridMagnification from "../animations/Grid Magnification/GridMagnification";
@@ -18,10 +19,10 @@ import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
+import RippleEffect from "../animations/RippleEffect/RippleEffect";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
-import ColorPicker from "../animations/ColorPicker/ColorPicker";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -51,6 +52,7 @@ function AppNavigator() {
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
+      <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
       <Stack.Screen name={"WhatsAppMic"} component={WhatsAppMic} />

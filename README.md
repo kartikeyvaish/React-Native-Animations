@@ -33,3 +33,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [15. Grid Magnification](https://github.com/kartikeyvaish/Animations/tree/main/animations/GridMagnification)
 
 ## [16. Color Picker](https://github.com/kartikeyvaish/Animations/tree/main/animations/ColorPicker)
+
+## [16. Ripple Effect](https://github.com/kartikeyvaish/Animations/tree/main/animations/RippleEffect)

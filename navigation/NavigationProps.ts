@@ -20,6 +20,7 @@ export type AppStackParamsList = {
     ParallaxCaraousel: undefined;
     ProgressDots: undefined;
     Ringing: undefined;
+    RippleEffect: undefined;
     TallyCounter: undefined;
     VolumeSlider: undefined;
     WhatsAppMic: undefined;
