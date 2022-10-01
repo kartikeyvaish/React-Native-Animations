@@ -21,6 +21,7 @@ import Ringing from "../animations/Ringing/Ringing";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
+import ColorPicker from "../animations/ColorPicker/ColorPicker";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -41,6 +42,7 @@ function AppNavigator() {
       <Stack.Screen name={"BreathingLoader"} component={BreathingLoader} />
       <Stack.Screen name={"Clock"} component={Clock} />
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
+      <Stack.Screen name={"ColorPicker"} component={ColorPicker} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
       <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
