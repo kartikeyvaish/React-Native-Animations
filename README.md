@@ -29,3 +29,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [13. List Remover](https://github.com/kartikeyvaish/Animations/tree/main/animations/ListRemover)
 
 ## [14. WhatsApp Mic](https://github.com/kartikeyvaish/Animations/tree/main/animations/WhatsAppMic)
+
+## [15. Grid Magnification](https://github.com/kartikeyvaish/Animations/tree/main/animations/GridMagnification)

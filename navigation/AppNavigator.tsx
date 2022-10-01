@@ -1,8 +1,5 @@
 // Packages Imports
-import {
-  createNativeStackNavigator,
-  NativeStackNavigationOptions,
-} from "@react-navigation/native-stack";
+import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
 
 // Types/components/Navigators imports
 import { AppStackParamsList } from "./NavigationProps";
@@ -15,6 +12,7 @@ import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
 import CreditCard from "../animations/CreditCard/CreditCard";
 import ListRemover from "../animations/ListRemover/ListRemover";
+import GridMagnification from "../animations/Grid Magnification/GridMagnification";
 import MenuToggler from "../animations/MenuToggler/MenuToggler";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
@@ -44,6 +42,7 @@ function AppNavigator() {
       <Stack.Screen name={"Clock"} component={Clock} />
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
+      <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
       <Stack.Screen name={"MenuToggler"} component={MenuToggler} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
