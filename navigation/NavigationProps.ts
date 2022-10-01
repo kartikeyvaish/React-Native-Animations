@@ -11,6 +11,7 @@ export type AppStackParamsList = {
     BreathingLoader: undefined;
     Clock: undefined;
     ClockLoader: undefined;
+    ColorPicker: undefined;
     CreditCard: undefined;
     GridMagnification: undefined;
     ListRemover: undefined;
