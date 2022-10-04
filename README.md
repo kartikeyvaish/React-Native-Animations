@@ -34,8 +34,8 @@ A repo for some React Native Animations that I've practised. These animations ar
 
 ## [16. Color Picker](https://github.com/kartikeyvaish/Animations/tree/main/animations/ColorPicker)
 
-## [16. Ripple Effect](https://github.com/kartikeyvaish/Animations/tree/main/animations/RippleEffect)
+## [17. Ripple Effect](https://github.com/kartikeyvaish/Animations/tree/main/animations/RippleEffect)
 
-## [16. Onboarding](https://github.com/kartikeyvaish/Animations/tree/main/animations/Onboarding)
+## [18. Onboarding](https://github.com/kartikeyvaish/Animations/tree/main/animations/Onboarding)
 
-## [16. Circular Progress](https://github.com/kartikeyvaish/Animations/tree/main/animations/CircularProgress)
+## [19. Circular Progress](https://github.com/kartikeyvaish/Animations/tree/main/animations/CircularProgress)
