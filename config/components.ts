@@ -88,6 +88,11 @@ const components: any = [
         id: "19",
         name: "OnBoarding Screen",
         screen: "OnBoarding",
+    },
+    {
+        id: "20",
+        name: "Circular Progress",
+        screen: "CircularProgress",
     }
 ]
 
