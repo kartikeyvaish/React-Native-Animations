@@ -23,9 +23,13 @@ export default function useThemeManager() {
 
     // Light/Dark mode change listener
     useEffect(() => {
-        Appearance.addChangeListener(({ colorScheme }: any) => ChangeMode(colorScheme));
+        const subscription = Appearance.addChangeListener(({ colorScheme }: any) => ChangeMode(colorScheme));
 
-        return () => Appearance.removeChangeListener(({ colorScheme }: any) => ChangeMode(colorScheme));
+        return () => {
+            if (subscription.remove !== undefined) {
+                subscription.remove();
+            }
+        };
     }, []);
 
     // function to change theme

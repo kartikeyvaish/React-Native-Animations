@@ -24,6 +24,7 @@ export type AppStackParamsList = {
     Ringing: undefined;
     RippleEffect: undefined;
     TallyCounter: undefined;
+    ThemeChanger: undefined;
     VolumeSlider: undefined;
     WhatsAppMic: undefined;
 };

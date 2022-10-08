@@ -23,6 +23,7 @@ import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import RippleEffect from "../animations/RippleEffect/RippleEffect";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
+import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
 
@@ -58,6 +59,7 @@ function AppNavigator() {
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
+      <Stack.Screen name={"ThemeChanger"} component={ThemeChanger} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
       <Stack.Screen name={"WhatsAppMic"} component={WhatsAppMic} />
     </Stack.Navigator>
