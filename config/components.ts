@@ -93,6 +93,11 @@ const components: any = [
         id: "20",
         name: "Circular Progress",
         screen: "CircularProgress",
+    },
+    {
+        id: "21",
+        name: "Theme Changer",
+        screen: "ThemeChanger",
     }
 ]
 
