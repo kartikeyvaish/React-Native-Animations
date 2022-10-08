@@ -39,3 +39,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [18. Onboarding](https://github.com/kartikeyvaish/Animations/tree/main/animations/Onboarding)
 
 ## [19. Circular Progress](https://github.com/kartikeyvaish/Animations/tree/main/animations/CircularProgress)
+
+## [20. Theme Changer](https://github.com/kartikeyvaish/Animations/tree/main/animations/ThemeChanger)
