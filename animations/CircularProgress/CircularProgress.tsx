@@ -1,34 +1,54 @@
 // Packages imports
-import { StyleSheet, Text, View } from "react-native";
+import { useEffect } from "react";
+import { StyleSheet, Text, View, Appearance } from "react-native";
+import * as NavigationBar from "expo-navigation-bar";
+import { StatusBar } from "expo-status-bar";
 
 // Local imports
 import Progress from "./Progress";
+import Colors from "../../theme/Colors";
 
 // exporting the default component
 export default function CircularProgress() {
+  // change navigation bar color
+  useEffect(() => {
+    NavigationBar.setBackgroundColorAsync("black");
+
+    return () => {
+      const colorScheme = Appearance.getColorScheme();
+      NavigationBar.setBackgroundColorAsync(
+        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+      );
+    };
+  }, []);
+
   // render
   return (
-    <View style={styles.container}>
-      <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
-        <Text style={styles.heading}>Default View</Text>
-        <Progress progress={40} />
-      </View>
+    <>
+      <StatusBar backgroundColor="black" style="light" />
 
-      <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
-        <Text style={styles.heading}>Change Colors</Text>
-        <Progress progress={60} outerCircleColor="brown" progressCircleColor="orange" />
-      </View>
+      <View style={styles.container}>
+        <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
+          <Text style={styles.heading}>Default View</Text>
+          <Progress progress={40} />
+        </View>
 
-      <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
-        <Text style={styles.heading}>Show/Remove Label</Text>
-        <Progress progress={40} showLabel={false} />
-      </View>
+        <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
+          <Text style={styles.heading}>Change Colors</Text>
+          <Progress progress={60} outerCircleColor="brown" progressCircleColor="orange" />
+        </View>
 
-      <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
-        <Text style={styles.heading}>Increase Width of Stroke</Text>
-        <Progress progress={40} strokeWidth={20} />
+        <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
+          <Text style={styles.heading}>Show/Remove Label</Text>
+          <Progress progress={40} showLabel={false} />
+        </View>
+
+        <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
+          <Text style={styles.heading}>Increase Width of Stroke</Text>
+          <Progress progress={40} strokeWidth={20} />
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
