@@ -1,7 +1,8 @@
 // Packages imports
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import { useEffect } from "react";
+import { StyleSheet, View, Appearance } from "react-native";
 import { Canvas, Group, runTiming, SweepGradient, useTouchHandler, useValue, vec } from "@shopify/react-native-skia";
+import * as NavigationBar from "expo-navigation-bar";
 
 // Local imports
 import { RoundedItem } from "./components/rounded-item";
@@ -14,12 +15,26 @@ import {
   SQUARE_CONTAINER_SIZE,
   SQUARE_SIZE,
 } from "./constants/constants";
+import { StatusBar } from "expo-status-bar";
+import Colors from "../../theme/Colors";
 
 // Default export function GridMagnification
 export default function GridMagnification() {
   // use Value hook variables
   const touchedPoint = useValue<{ x: number; y: number } | null>(null);
   const progress = useValue(0);
+
+  // change navigation bar color
+  useEffect(() => {
+    NavigationBar.setBackgroundColorAsync("black");
+
+    return () => {
+      const colorScheme = Appearance.getColorScheme();
+      NavigationBar.setBackgroundColorAsync(
+        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+      );
+    };
+  }, []);
 
   // useTouchHandler hook variables
   const touchHandler = useTouchHandler({
@@ -38,28 +53,35 @@ export default function GridMagnification() {
 
   // render
   return (
-    <View style={styles.container}>
-      <Canvas style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }} onTouch={touchHandler}>
-        <Group>
-          {new Array(SQUARES_AMOUNT_HORIZONTAL).fill(0).map((_, i) => {
-            return new Array(SQUARES_AMOUNT_VERTICAL).fill(0).map((_, j) => {
-              return (
-                <RoundedItem
-                  progress={progress}
-                  point={touchedPoint}
-                  key={`i${i}-j${j}`}
-                  x={i * SQUARE_CONTAINER_SIZE + PADDING / 2}
-                  y={j * SQUARE_CONTAINER_SIZE + PADDING / 2}
-                  width={SQUARE_SIZE}
-                  height={SQUARE_SIZE}
-                />
-              );
-            });
-          })}
-          <SweepGradient c={vec(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2)} colors={["cyan", "magenta", "yellow", "cyan"]} />
-        </Group>
-      </Canvas>
-    </View>
+    <>
+      <StatusBar backgroundColor="black" style="light" />
+
+      <View style={styles.container}>
+        <Canvas style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }} onTouch={touchHandler}>
+          <Group>
+            {new Array(SQUARES_AMOUNT_HORIZONTAL).fill(0).map((_, i) => {
+              return new Array(SQUARES_AMOUNT_VERTICAL).fill(0).map((_, j) => {
+                return (
+                  <RoundedItem
+                    progress={progress}
+                    point={touchedPoint}
+                    key={`i${i}-j${j}`}
+                    x={i * SQUARE_CONTAINER_SIZE + PADDING / 2}
+                    y={j * SQUARE_CONTAINER_SIZE + PADDING / 2}
+                    width={SQUARE_SIZE}
+                    height={SQUARE_SIZE}
+                  />
+                );
+              });
+            })}
+            <SweepGradient
+              c={vec(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2)}
+              colors={["cyan", "magenta", "yellow", "cyan"]}
+            />
+          </Group>
+        </Canvas>
+      </View>
+    </>
   );
 }
 
