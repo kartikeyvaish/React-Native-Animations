@@ -1,14 +1,15 @@
 // Packages Imports
 import { useEffect, useState } from "react";
 import { StyleSheet, Appearance } from "react-native";
+import Animated, { useSharedValue, withTiming } from "react-native-reanimated";
 import * as NavigationBar from "expo-navigation-bar";
-import * as StatusBar from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 
 // Local Imports
+import Colors from "../../theme/Colors";
+import ScalingPoint from "./components/ScalingPoint";
 import Theme from "../../theme/Colors";
 import Toggler from "./components/Toggler";
-import Animated, { useSharedValue, withTiming } from "react-native-reanimated";
-import ScalingPoint from "./components/ScalingPoint";
 
 // initial value
 const isDark = Appearance.getColorScheme() === "dark";
@@ -38,7 +39,13 @@ function ThemeChanger() {
   // Change the navigation Bar color on ccomponent load
   useEffect(() => {
     NavigationBar.setBackgroundColorAsync(ThemeConfig.colors.background);
-    StatusBar.setStatusBarBackgroundColor(ThemeConfig.colors.background, false);
+
+    return () => {
+      const colorScheme = Appearance.getColorScheme();
+      NavigationBar.setBackgroundColorAsync(
+        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+      );
+    };
   }, [ThemeConfig]);
 
   // Change theme
@@ -54,16 +61,19 @@ function ThemeChanger() {
 
   // render
   return (
-    <Animated.View style={[styles.container]}>
-      <ScalingPoint isDarkProgress={isDarkProgress} />
+    <>
+      <StatusBar backgroundColor={IsDark ? "black" : "white"} style={IsDark ? "light" : "dark"} />
+      <Animated.View style={[styles.container]}>
+        <ScalingPoint isDarkProgress={isDarkProgress} />
 
-      <Toggler
-        onTogglePress={() => ChangeTheme(IsDark ? "light" : "dark")}
-        textColor={ThemeConfig.colors.text}
-        backgroundColor={ThemeConfig.colors.background}
-        isDarkProgress={isDarkProgress}
-      />
-    </Animated.View>
+        <Toggler
+          onTogglePress={() => ChangeTheme(IsDark ? "light" : "dark")}
+          textColor={ThemeConfig.colors.text}
+          backgroundColor={ThemeConfig.colors.background}
+          isDarkProgress={isDarkProgress}
+        />
+      </Animated.View>
+    </>
   );
 }
 
