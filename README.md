@@ -30,7 +30,7 @@ A repo for some React Native Animations that I've practised. These animations ar
 
 ## [14. WhatsApp Mic](https://github.com/kartikeyvaish/Animations/tree/main/animations/WhatsAppMic)
 
-## [15. Grid Magnification](https://github.com/kartikeyvaish/Animations/tree/main/animations/GridMagnification)
+## [15. Grid Magnification](https://github.com/kartikeyvaish/Animations/tree/main/animations/Grid%20Magnification)
 
 ## [16. Color Picker](https://github.com/kartikeyvaish/Animations/tree/main/animations/ColorPicker)
 
