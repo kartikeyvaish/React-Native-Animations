@@ -41,3 +41,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [19. Circular Progress](https://github.com/kartikeyvaish/Animations/tree/main/animations/CircularProgress)
 
 ## [20. Theme Changer](https://github.com/kartikeyvaish/Animations/tree/main/animations/ThemeChanger)
+
+## [21. Shake Shuffle](https://github.com/kartikeyvaish/Animations/tree/main/animations/ShakeItUp)

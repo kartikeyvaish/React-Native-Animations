@@ -23,6 +23,7 @@ export type AppStackParamsList = {
     ProgressDots: undefined;
     Ringing: undefined;
     RippleEffect: undefined;
+    ShakeItUp: undefined;
     TallyCounter: undefined;
     ThemeChanger: undefined;
     VolumeSlider: undefined;

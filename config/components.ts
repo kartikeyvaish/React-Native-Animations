@@ -98,6 +98,11 @@ const components: any = [
         id: "21",
         name: "Theme Changer",
         screen: "ThemeChanger",
+    },
+    {
+        id: "22",
+        name: "Shake It Up",
+        screen: "ShakeItUp",
     }
 ]
 

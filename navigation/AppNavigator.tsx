@@ -22,6 +22,7 @@ import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import RippleEffect from "../animations/RippleEffect/RippleEffect";
+import ShakeItUp from "../animations/ShakeItUp/ShakeItUp";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
@@ -58,6 +59,7 @@ function AppNavigator() {
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
+      <Stack.Screen name={"ShakeItUp"} component={ShakeItUp} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"ThemeChanger"} component={ThemeChanger} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
