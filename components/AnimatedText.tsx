@@ -24,6 +24,7 @@ function AnimatedText(props: AnimatedTextProps) {
     entering = SlideInDown,
     exiting = SlideOutUp,
     layout = Layout,
+    keepEntExitAni = true,
     ...otherProps
   } = props;
 
@@ -43,8 +44,8 @@ function AnimatedText(props: AnimatedTextProps) {
   // Rendering the AnimatedText component
   return (
     <Animated.Text
-      entering={entering}
-      exiting={exiting}
+      entering={keepEntExitAni ? entering : null}
+      exiting={keepEntExitAni ? exiting : null}
       layout={layout}
       key={animatedTextKey ? animatedTextKey : text}
       style={textStyles}

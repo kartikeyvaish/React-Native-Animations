@@ -3,7 +3,9 @@ import { ColorValue, ScrollViewProps, StyleProp, TextProps, ViewStyle } from "re
 import Animated from "react-native-reanimated";
 
 // AnimatedText Props interface
-export interface AnimatedTextProps extends AppTextProps, Animated.AnimateProps<any> { }
+export interface AnimatedTextProps extends AppTextProps, Animated.AnimateProps<any> {
+    keepEntExitAni?: boolean
+}
 
 // interface for AppContainer
 export interface AppContainerProps extends ChildrenProps {
