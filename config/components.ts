@@ -103,7 +103,12 @@ const components: any = [
         id: "22",
         name: "Shake It Up",
         screen: "ShakeItUp",
-    }
+    },
+    {
+        id: "23",
+        name: "Flip Card",
+        screen: "FlipCard"
+    },
 ]
 
 export default components;

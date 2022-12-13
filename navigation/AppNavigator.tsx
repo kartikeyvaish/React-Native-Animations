@@ -13,8 +13,9 @@ import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
 import ColorPicker from "../animations/ColorPicker/ColorPicker";
 import CreditCard from "../animations/CreditCard/CreditCard";
-import ListRemover from "../animations/ListRemover/ListRemover";
+import FlipCard from "../animations/FlipCard/FlipCard";
 import GridMagnification from "../animations/Grid Magnification/GridMagnification";
+import ListRemover from "../animations/ListRemover/ListRemover";
 import MenuToggler from "../animations/MenuToggler/MenuToggler";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import OnBoarding from "../animations/Onboarding/OnBoarding";
@@ -50,6 +51,7 @@ function AppNavigator() {
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
       <Stack.Screen name={"ColorPicker"} component={ColorPicker} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
+      <Stack.Screen name={"FlipCard"} component={FlipCard} />
       <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
       <Stack.Screen name={"MenuToggler"} component={MenuToggler} />
