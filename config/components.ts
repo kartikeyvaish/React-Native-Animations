@@ -109,6 +109,11 @@ const components: any = [
         name: "Flip Card",
         screen: "FlipCard"
     },
+    {
+        id: "24",
+        name: "Animated Flatlist",
+        screen: "AnimatedFlatlist"
+    }
 ]
 
 export default components;
