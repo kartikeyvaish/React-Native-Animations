@@ -43,3 +43,7 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [20. Theme Changer](https://github.com/kartikeyvaish/Animations/tree/main/animations/ThemeChanger)
 
 ## [21. Shake Shuffle](https://github.com/kartikeyvaish/Animations/tree/main/animations/ShakeItUp)
+
+## [22. Flip Card](https://github.com/kartikeyvaish/Animations/tree/main/animations/FlipCard)
+
+## [23. Animated Flatlist](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedFlatlist)
