@@ -6,7 +6,7 @@ import Animated, { interpolate, runOnJS, useAnimatedStyle, useSharedValue, withT
 // Local Imports
 import AnimatedText from "../../components/AnimatedText";
 import AppContainer from "../../components/AppContainer";
-import ColorPallete from "../Diary/constants/ColorPallete";
+import ColorPallete from "../../utils/ColorPallete";
 import { ScreenWidth } from "../.././constants/Dimensions";
 
 // Constants
