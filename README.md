@@ -47,3 +47,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [22. Flip Card](https://github.com/kartikeyvaish/Animations/tree/main/animations/FlipCard)
 
 ## [23. Animated Flatlist](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedFlatlist)
+
+## [24. Animated Timer](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedTimer)

@@ -8,6 +8,7 @@ import { AppStackParamsList } from "./NavigationProps";
 import HomeScreen from "./../screens/HomeScreen";
 import AnimatedFlatList from "../animations/AnimatedFlatlist/AnimatedFlatList";
 import AnimatingSlider from "../animations/AnimatedSlider/AnimatedSlider";
+import AnimatedTimer from "../animations/AnimatedTimer/AnimatedTimer";
 import BreathingLoader from "../animations/BreathingLoader/BreathingLoader";
 import CircularProgress from "../animations/CircularProgress/CircularProgress";
 import Clock from "../animations/Clock/Clock";
@@ -47,6 +48,7 @@ function AppNavigator() {
       <Stack.Screen name={"HomeScreen"} component={HomeScreen} />
       <Stack.Screen name={"AnimatedFlatlist"} component={AnimatedFlatList} />
       <Stack.Screen name={"AnimatingSlider"} component={AnimatingSlider} />
+      <Stack.Screen name={"AnimatedTimer"} component={AnimatedTimer} />
       <Stack.Screen name={"BreathingLoader"} component={BreathingLoader} />
       <Stack.Screen name={"CircularProgress"} component={CircularProgress} />
       <Stack.Screen name={"Clock"} component={Clock} />

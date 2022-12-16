@@ -113,6 +113,11 @@ const components: any = [
         id: "24",
         name: "Animated Flatlist",
         screen: "AnimatedFlatlist"
+    },
+    {
+        id: "25",
+        name: "Animated Timer",
+        screen: "AnimatedTimer"
     }
 ]
 
