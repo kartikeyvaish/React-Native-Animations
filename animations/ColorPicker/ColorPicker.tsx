@@ -1,6 +1,6 @@
 // Packages imports
 import { useEffect, useCallback } from "react";
-import { Dimensions, StyleSheet, View, Appearance } from "react-native";
+import { Dimensions, StyleSheet, View, Appearance, Platform } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue } from "react-native-reanimated";
 
 // Local imports
@@ -27,14 +27,16 @@ export default function ColorPicker() {
 
   // change navigation bar color
   useEffect(() => {
-    NavigationBar.setBackgroundColorAsync(BACKGROUND_COLOR);
+    if (Platform.OS === "android") {
+      NavigationBar.setBackgroundColorAsync(BACKGROUND_COLOR);
 
-    return () => {
-      const colorScheme = Appearance.getColorScheme();
-      NavigationBar.setBackgroundColorAsync(
-        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
-      );
-    };
+      return () => {
+        const colorScheme = Appearance.getColorScheme();
+        NavigationBar.setBackgroundColorAsync(
+          colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+        );
+      };
+    }
   }, []);
 
   // function to handle on color change
@@ -52,7 +54,7 @@ export default function ColorPicker() {
 
   return (
     <>
-      <StatusBar backgroundColor={BACKGROUND_COLOR} style="light" />
+      <StatusBar backgroundColor={BACKGROUND_COLOR} style='light' />
 
       <View style={styles.topContainer}>
         <Animated.View style={[styles.circle, rStyle]} />

@@ -1,6 +1,6 @@
 // Packages Imports
 import { useEffect, useState } from "react";
-import { Appearance } from "react-native";
+import { Appearance, Platform } from "react-native";
 import * as NavigationBar from "expo-navigation-bar"
 
 // Local Imports
@@ -18,7 +18,9 @@ export default function useThemeManager() {
 
     // Change the navigation Bar color on app start
     useEffect(() => {
-        NavigationBar.setBackgroundColorAsync(Theme.colors.background)
+        if (Platform.OS === "android") {
+            NavigationBar.setBackgroundColorAsync(Theme.colors.background)
+        }
     }, [Theme])
 
     // Light/Dark mode change listener

@@ -1,7 +1,15 @@
 // Packages imports
 import { useEffect } from "react";
-import { StyleSheet, View, Appearance } from "react-native";
-import { Canvas, Group, runTiming, SweepGradient, useTouchHandler, useValue, vec } from "@shopify/react-native-skia";
+import { StyleSheet, View, Appearance, Platform } from "react-native";
+import {
+  Canvas,
+  Group,
+  runTiming,
+  SweepGradient,
+  useTouchHandler,
+  useValue,
+  vec,
+} from "@shopify/react-native-skia";
 import * as NavigationBar from "expo-navigation-bar";
 
 // Local imports
@@ -26,14 +34,16 @@ export default function GridMagnification() {
 
   // change navigation bar color
   useEffect(() => {
-    NavigationBar.setBackgroundColorAsync("black");
+    if (Platform.OS === "android") {
+      NavigationBar.setBackgroundColorAsync("black");
 
-    return () => {
-      const colorScheme = Appearance.getColorScheme();
-      NavigationBar.setBackgroundColorAsync(
-        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
-      );
-    };
+      return () => {
+        const colorScheme = Appearance.getColorScheme();
+        NavigationBar.setBackgroundColorAsync(
+          colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+        );
+      };
+    }
   }, []);
 
   // useTouchHandler hook variables
@@ -54,7 +64,7 @@ export default function GridMagnification() {
   // render
   return (
     <>
-      <StatusBar backgroundColor="black" style="light" />
+      <StatusBar backgroundColor='black' style='light' />
 
       <View style={styles.container}>
         <Canvas style={{ width: CANVAS_WIDTH, height: CANVAS_HEIGHT }} onTouch={touchHandler}>
