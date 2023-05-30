@@ -118,6 +118,11 @@ const components: any = [
         id: "25",
         name: "Animated Timer",
         screen: "AnimatedTimer"
+    },
+    {
+        id: "26",
+        name: "Animated OTP Input",
+        screen: "AnimatedOTPInput"
     }
 ]
 

@@ -8,6 +8,7 @@ export type AppStackParamsList = {
     // App Stack Screens
     HomeScreen: undefined;
     AnimatedFlatlist: undefined;
+    AnimatedOTPInput: undefined;
     AnimatingSlider: undefined;
     AnimatedTimer: undefined;
     BreathingLoader: undefined;
