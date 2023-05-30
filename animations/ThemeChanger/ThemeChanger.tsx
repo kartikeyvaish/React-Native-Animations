@@ -1,6 +1,6 @@
 // Packages Imports
 import { useEffect, useState } from "react";
-import { StyleSheet, Appearance } from "react-native";
+import { StyleSheet, Appearance, Platform } from "react-native";
 import Animated, { useSharedValue, withTiming } from "react-native-reanimated";
 import * as NavigationBar from "expo-navigation-bar";
 import { StatusBar } from "expo-status-bar";
@@ -27,7 +27,9 @@ function ThemeChanger() {
 
   // Light/Dark mode change listener
   useEffect(() => {
-    const subscription = Appearance.addChangeListener(({ colorScheme }: any) => ChangeTheme(colorScheme));
+    const subscription = Appearance.addChangeListener(({ colorScheme }: any) =>
+      ChangeTheme(colorScheme)
+    );
 
     return () => {
       if (subscription.remove !== undefined) {
@@ -38,14 +40,16 @@ function ThemeChanger() {
 
   // Change the navigation Bar color on ccomponent load
   useEffect(() => {
-    NavigationBar.setBackgroundColorAsync(ThemeConfig.colors.background);
+    if (Platform.OS === "android") {
+      NavigationBar.setBackgroundColorAsync(ThemeConfig.colors.background);
 
-    return () => {
-      const colorScheme = Appearance.getColorScheme();
-      NavigationBar.setBackgroundColorAsync(
-        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
-      );
-    };
+      return () => {
+        const colorScheme = Appearance.getColorScheme();
+        NavigationBar.setBackgroundColorAsync(
+          colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+        );
+      };
+    }
   }, [ThemeConfig]);
 
   // Change theme

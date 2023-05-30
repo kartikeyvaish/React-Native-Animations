@@ -1,6 +1,6 @@
 // Packages imports
 import { useEffect } from "react";
-import { StyleSheet, Text, View, Appearance } from "react-native";
+import { StyleSheet, Text, View, Appearance, Platform } from "react-native";
 import * as NavigationBar from "expo-navigation-bar";
 import { StatusBar } from "expo-status-bar";
 
@@ -12,20 +12,22 @@ import Colors from "../../theme/Colors";
 export default function CircularProgress() {
   // change navigation bar color
   useEffect(() => {
-    NavigationBar.setBackgroundColorAsync("black");
+    if (Platform.OS === "android") {
+      NavigationBar.setBackgroundColorAsync("black");
 
-    return () => {
-      const colorScheme = Appearance.getColorScheme();
-      NavigationBar.setBackgroundColorAsync(
-        colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
-      );
-    };
+      return () => {
+        const colorScheme = Appearance.getColorScheme();
+        NavigationBar.setBackgroundColorAsync(
+          colorScheme === "dark" ? Colors.dark.colors.background : Colors.light.colors.background
+        );
+      };
+    }
   }, []);
 
   // render
   return (
     <>
-      <StatusBar backgroundColor="black" style="light" />
+      <StatusBar backgroundColor='black' style='light' />
 
       <View style={styles.container}>
         <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
@@ -35,7 +37,7 @@ export default function CircularProgress() {
 
         <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>
           <Text style={styles.heading}>Change Colors</Text>
-          <Progress progress={60} outerCircleColor="brown" progressCircleColor="orange" />
+          <Progress progress={60} outerCircleColor='brown' progressCircleColor='orange' />
         </View>
 
         <View style={{ flex: 1, marginBottom: 30, alignItems: "center" }}>

@@ -1,5 +1,8 @@
 // Packages Imports
-import { createNativeStackNavigator, NativeStackNavigationOptions } from "@react-navigation/native-stack";
+import {
+  createNativeStackNavigator,
+  NativeStackNavigationOptions,
+} from "@react-navigation/native-stack";
 
 // Types/components/Navigators imports
 import { AppStackParamsList } from "./NavigationProps";
@@ -7,6 +10,7 @@ import { AppStackParamsList } from "./NavigationProps";
 // Screen imports
 import HomeScreen from "./../screens/HomeScreen";
 import AnimatedFlatList from "../animations/AnimatedFlatlist/AnimatedFlatList";
+import AnimatedOTPInput from "../animations/AnimatedOTPInput/AnimatedOTPInputScreen";
 import AnimatingSlider from "../animations/AnimatedSlider/AnimatedSlider";
 import AnimatedTimer from "../animations/AnimatedTimer/AnimatedTimer";
 import BreathingLoader from "../animations/BreathingLoader/BreathingLoader";
@@ -47,6 +51,7 @@ function AppNavigator() {
       {/* App Screens */}
       <Stack.Screen name={"HomeScreen"} component={HomeScreen} />
       <Stack.Screen name={"AnimatedFlatlist"} component={AnimatedFlatList} />
+      <Stack.Screen name={"AnimatedOTPInput"} component={AnimatedOTPInput} />
       <Stack.Screen name={"AnimatingSlider"} component={AnimatingSlider} />
       <Stack.Screen name={"AnimatedTimer"} component={AnimatedTimer} />
       <Stack.Screen name={"BreathingLoader"} component={BreathingLoader} />
