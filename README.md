@@ -49,3 +49,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [23. Animated Flatlist](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedFlatlist)
 
 ## [24. Animated Timer](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedTimer)
+
+## [25. Animated OTP Input](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedOTPInput)
