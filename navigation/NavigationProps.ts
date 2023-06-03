@@ -21,6 +21,7 @@ export type AppStackParamsList = {
     GridMagnification: undefined;
     ListRemover: undefined;
     MenuToggler: undefined;
+    MetaballAnimation: undefined;
     MoviesSlider: undefined;
     OnBoarding: undefined;
     ParallaxCaraousel: undefined;

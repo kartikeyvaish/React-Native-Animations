@@ -34,6 +34,7 @@ import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
+import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -64,6 +65,7 @@ function AppNavigator() {
       <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
       <Stack.Screen name={"MenuToggler"} component={MenuToggler} />
+      <Stack.Screen name={"MetaballAnimation"} component={MetaballAnimation} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
