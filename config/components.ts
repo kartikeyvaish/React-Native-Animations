@@ -123,6 +123,11 @@ const components: any = [
         id: "26",
         name: "Animated OTP Input",
         screen: "AnimatedOTPInput"
+    },
+    {
+        id: "27",
+        name: "Metaball Animation",
+        screen: "MetaballAnimation"
     }
 ]
 
