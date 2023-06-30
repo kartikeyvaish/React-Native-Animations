@@ -1,4 +1,4 @@
-name: Run Tests
+name: Tests for merging a PR on main
 
 on:
   pull_request:
