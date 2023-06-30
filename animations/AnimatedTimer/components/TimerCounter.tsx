@@ -9,16 +9,17 @@ import ColorPallete from "../../../utils/ColorPallete";
 export interface TimerCounterProps {
   visible?: boolean;
   counterValue: number;
+  testID?: string;
 }
 
 // function component for TimerCounter
 function TimerCounter(props: TimerCounterProps) {
   // Destructuring props
-  const { visible, counterValue } = props;
+  const { visible, counterValue, testID } = props;
 
   // render
   return visible ? (
-    <Animated.Text style={styles.timerCounter} entering={FadeIn} exiting={FadeOut}>
+    <Animated.Text testID={testID} style={styles.timerCounter} entering={FadeIn} exiting={FadeOut}>
       {counterValue.toString()}
     </Animated.Text>
   ) : null;

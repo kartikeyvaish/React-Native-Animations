@@ -10,12 +10,13 @@ import ColorPallete from "../../../utils/ColorPallete";
 export interface StartButtonProps {
   onPress?: () => void;
   visible?: boolean;
+  testID?: string;
 }
 
 // function component for StartButton
 function StartButton(props: StartButtonProps) {
   // Destructuring props
-  const { onPress, visible } = props;
+  const { onPress, visible, testID } = props;
 
   // refs
   const initialRenderingDone = useRef(false);
@@ -29,7 +30,11 @@ function StartButton(props: StartButtonProps) {
   return (
     <>
       {visible ? (
-        <Animated.View entering={initialRenderingDone.current ? SlideInDown : undefined} exiting={SlideOutDown}>
+        <Animated.View
+          testID={testID}
+          entering={initialRenderingDone.current ? SlideInDown : undefined}
+          exiting={SlideOutDown}
+        >
           <TouchableOpacity style={styles.container} onPress={onPress}></TouchableOpacity>
         </Animated.View>
       ) : null}
