@@ -48,7 +48,7 @@ export function RippleCircleButton(props: RippleCircleButtonProps) {
   const { children, onPress } = props;
 
   return (
-    <View style={styles.digitContainer}>
+    <View style={styles.digitContainer} testID='animated-ripple-button-otp'>
       <RectButton
         style={styles.rippleButton}
         onPress={onPress}
@@ -118,7 +118,7 @@ function AnimatedOTPInput() {
 
   // render
   return (
-    <View>
+    <View testID='animated-otp-input'>
       <View style={styles.otpContainer}>
         {new Array(OTP_LENGTH).fill(0).map((_, index) => (
           <MotiView
