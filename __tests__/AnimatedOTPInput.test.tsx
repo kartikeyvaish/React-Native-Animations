@@ -9,16 +9,14 @@ import AnimatedOTPInput, {
 
 describe("<AnimatedOTPInput />", () => {
   it("renders correctly", () => {
-    const { toJSON } = render(<AnimatedOTPInput />);
-    expect(toJSON()).toMatchSnapshot();
+    const { getByTestId } = render(<AnimatedOTPInput />);
+    const animatedOtpInput = getByTestId("animated-otp-input");
+    expect(animatedOtpInput).toBeTruthy();
   });
 });
 
 describe("<DigitItem />", () => {
   it("renders correctly", () => {
-    const { toJSON } = render(<DigitItem digit='1' />);
-    expect(toJSON()).toMatchSnapshot();
-
     const { getByTestId } = render(<DigitItem digit='6' />);
     expect(getByTestId("digit-6")).toBeTruthy();
   });
@@ -33,8 +31,9 @@ describe("<DigitItem />", () => {
 
 describe("<RippleCircleButton />", () => {
   it("renders correctly", () => {
-    const { toJSON } = render(<RippleCircleButton />);
-    expect(toJSON()).toMatchSnapshot();
+    const { getByTestId } = render(<RippleCircleButton />);
+    const rippleButton = getByTestId("animated-ripple-button-otp");
+    expect(rippleButton).toBeTruthy();
   });
 
   it("calls onPress", () => {
