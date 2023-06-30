@@ -26,6 +26,7 @@ function BreathingLoader() {
           borderWidth: 0,
           opacity: 0,
         }}
+        testID='breathing-component'
         animate={{
           width: SIZE + 20,
           height: SIZE + 20,
