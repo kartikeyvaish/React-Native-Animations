@@ -24,7 +24,7 @@ function ClockLoader() {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='clock-loader-component'>
       {DEFAULT_ARRAY.map((_, index) => (
         <Dot key={index} index={index} progress={progress} />
       ))}
