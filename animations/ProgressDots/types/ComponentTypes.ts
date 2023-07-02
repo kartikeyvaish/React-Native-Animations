@@ -10,4 +10,5 @@ export interface ProgressDotsProps {
 // interface for Dots
 export interface DotsProps extends ProgressDotsProps {
     dotProgress: SharedValue<number>;
+    testID?: string;
 }

@@ -8,7 +8,7 @@ import { DotsProps } from "../types/ComponentTypes";
 // function component for Dots
 function Dots(props: DotsProps) {
   // Destructuring props
-  const { dotProgress, dotColor = "black", dotBounceHeight = 10 } = props;
+  const { dotProgress, dotColor = "black", dotBounceHeight = 10, testID } = props;
 
   // styles for dot
   const dotStyle: StyleProp<ViewStyle> = [
@@ -31,7 +31,7 @@ function Dots(props: DotsProps) {
   });
 
   // render
-  return <Animated.View style={[dotStyle, dotAnimatedStyles]} />;
+  return <Animated.View testID={testID} style={[dotStyle, dotAnimatedStyles]} />;
 }
 
 // exports
