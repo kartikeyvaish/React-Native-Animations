@@ -26,7 +26,7 @@ jobs:
         run: yarn test
 
       - name: Add label based on test results
-        if: ${{ always() }}
+        if: always()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -34,7 +34,7 @@ jobs:
           owner=$(jq --raw-output .repository.owner.login "$GITHUB_EVENT_PATH")
           repo=$(jq --raw-output .repository.name "$GITHUB_EVENT_PATH")
 
-          if [[ ${{ steps.test.outputs.return-code }} -eq 0 ]]; then
+          if [ ${{ steps.test.outputs.return-code }} -eq 0 ]; then
             label='ci-passing'
             color='#0E8A16'
           else
