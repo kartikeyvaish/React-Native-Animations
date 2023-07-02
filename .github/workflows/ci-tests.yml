@@ -27,38 +27,40 @@ jobs:
 
       - name: Add label based on test results
         if: always()
+        uses: actions/github-script@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-          owner=$(jq --raw-output .repository.owner.login "$GITHUB_EVENT_PATH")
-          repo=$(jq --raw-output .repository.name "$GITHUB_EVENT_PATH")
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const isPassing = steps.test.outcome == 'success';
+            const label = isPassing ? 'ci-passing' : 'ci-failing';
+            const color = isPassing ? '0E8A16' : 'B60205';
 
-          if [ ${{ steps.test.outputs.return-code }} -eq 0 ]; then
-            label='ci-passing'
-            color='0E8A16'
-          else
-            label='ci-failing'
-            color='B60205'
-          fi
+            // Check if the label already exists
+            const { data: existingLabel } = await github.issues.getLabel({
+              owner,
+              repo,
+              name: label,
+            });
 
-          label_exists=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            "https://api.github.com/repos/$owner/$repo/labels/$label")
+            if (!existingLabel) {
+              // Create the label if it doesn't exist
+              await github.issues.createLabel({
+                owner,
+                repo,
+                name: label,
+                color,
+              });
+            }
 
-          if [ -z "$label_exists" ]; then
-            response=$(curl -X POST -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-              -H "Accept: application/vnd.github.v3+json" \
-              -d "{\"name\": \"$label\", \"color\": \"$color\"}" \
-              "https://api.github.com/repos/$owner/$repo/labels")
-
-            if [ $(jq -r '.name' <<< "$response") != "$label" ]; then
-              echo "Failed to create the label: $label"
-              exit 1
-            fi
-          fi
-
-          curl -X POST -s -H "Authorization: Bearer $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            -d "[]" \
-            "https://api.github.com/repos/$owner/$repo/issues/$pull_request_number/labels"
+            // Add the label to the pull request
+            await github.issues.addLabels({
+              owner,
+              repo,
+              issue_number: prNumber,
+              labels: [label],
+            });
