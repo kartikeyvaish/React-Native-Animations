@@ -17,6 +17,7 @@ export type AppStackParamsList = {
     ClockLoader: undefined;
     ColorPicker: undefined;
     CreditCard: undefined;
+    FlingCardStack: undefined;
     FlipCard: undefined;
     GridMagnification: undefined;
     ListRemover: undefined;
