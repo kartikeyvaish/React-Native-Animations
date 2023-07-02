@@ -72,7 +72,7 @@ function VolumeSlider() {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='volume-slider-component'>
       <PanGestureHandler onGestureEvent={panHandler}>
         <Animated.View
           style={{
@@ -97,7 +97,7 @@ function VolumeSlider() {
           <Animated.View
             style={[{ position: "absolute", alignSelf: "center", top: 20 }, animatedIconStyle]}
           >
-            <Feather name="volume-2" size={24} color={colors.text} />
+            <Feather name='volume-2' size={24} color={colors.text} />
           </Animated.View>
         </Animated.View>
       </PanGestureHandler>
