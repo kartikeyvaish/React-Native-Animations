@@ -22,4 +22,26 @@ jobs:
         run: yarn install
 
       - name: Run tests
+        id: test
         run: yarn test
+
+      - name: Add label based on test results
+        if: ${{ always() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          owner=$(jq --raw-output .repository.owner.login "$GITHUB_EVENT_PATH")
+          repo=$(jq --raw-output .repository.name "$GITHUB_EVENT_PATH")
+
+          if [[ ${{ steps.test.outputs.return-code }} -eq 0 ]]; then
+            label='ci-passing'
+            color='#0E8A16'
+          else
+            label='ci-failing'
+            color='#B60205'
+          fi
+
+          curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -d "{\"labels\": [\"$label\"], \"color\": \"$color\"}" \
+            "https://api.github.com/repos/$owner/$repo/issues/$pull_request_number/labels"
