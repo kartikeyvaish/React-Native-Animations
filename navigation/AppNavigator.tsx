@@ -19,6 +19,7 @@ import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
 import ColorPicker from "../animations/ColorPicker/ColorPicker";
 import CreditCard from "../animations/CreditCard/CreditCard";
+import FlingCardStackScreen from "../animations/FlingCardStack/FlingCardStackScreen";
 import FlipCard from "../animations/FlipCard/FlipCard";
 import GridMagnification from "../animations/Grid Magnification/GridMagnification";
 import ListRemover from "../animations/ListRemover/ListRemover";
@@ -61,6 +62,7 @@ function AppNavigator() {
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
       <Stack.Screen name={"ColorPicker"} component={ColorPicker} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
+      <Stack.Screen name={"FlingCardStackScreen"} component={FlingCardStackScreen} />
       <Stack.Screen name={"FlipCard"} component={FlipCard} />
       <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />

@@ -128,6 +128,11 @@ const components: any = [
         id: "27",
         name: "Metaball Animation",
         screen: "MetaballAnimation"
+    },
+    {
+        id: "28",
+        name: 'Fling Card Stack',
+        screen: 'FlingCardStackScreen'
     }
 ]
 
