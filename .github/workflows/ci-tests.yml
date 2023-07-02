@@ -27,40 +27,30 @@ jobs:
 
       - name: Add label based on test results
         if: always()
-        uses: actions/github-script@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = context.payload.pull_request.number;
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const isPassing = steps.test.outcome == 'success';
-            const label = isPassing ? 'ci-passing' : 'ci-failing';
-            const color = isPassing ? '0E8A16' : 'B60205';
+        run: |
+          if [[ ${{ steps.test.outcome }} == 'success' ]]; then
+            LABEL_TO_ADD='ci-passing'
+            LABEL_TO_REMOVE='ci-failing'
+          else
+            LABEL_TO_ADD='ci-failing'
+            LABEL_TO_REMOVE='ci-passing'
+          fi
 
-            // Check if the label already exists
-            const { data: existingLabel } = await github.issues.getLabel({
-              owner,
-              repo,
-              name: label,
-            });
+          # Remove the opposite label if it exists
+          curl -L \
+            -X DELETE \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/labels/$LABEL_TO_REMOVE"
 
-            if (!existingLabel) {
-              // Create the label if it doesn't exist
-              await github.issues.createLabel({
-                owner,
-                repo,
-                name: label,
-                color,
-              });
-            }
-
-            // Add the label to the pull request
-            await github.issues.addLabels({
-              owner,
-              repo,
-              issue_number: prNumber,
-              labels: [label],
-            });
+          # Add the desired label
+          curl -L \
+            -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/issues/$ISSUE_NUMBER/labels" \
+            -d "{\"labels\":[\"$LABEL_TO_ADD\"]}"
