@@ -2,6 +2,8 @@
 
 A repo for some React Native Animations that I've practiced. These animations are highly inspired by [Catalin Miron](https://www.youtube.com/c/CatalinMironDev/videos) and [Enzo Manuel Mangano AKA Reactiive](https://www.youtube.com/c/Reactiive).
 
+![CI](https://github.com/kartikeyvaish/React-Native-Animations/actions/workflows/main.yml/badge.svg)
+
 ## [1. Clock](https://github.com/kartikeyvaish/Animations/tree/main/animations/Clock)
 
 ## [2. Clock Loader](https://github.com/kartikeyvaish/Animations/tree/main/animations/ClockLoader)
