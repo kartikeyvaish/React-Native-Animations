@@ -18,12 +18,15 @@ function AnimatedFlatList() {
   };
 
   // callback for rendering item
-  const renderItem = ({ item }: { item: ItemProps }) => <ListItem id={item.id} visibleItems={visibleItems} />;
+  const renderItem = ({ item }: { item: ItemProps }) => (
+    <ListItem id={item.id} visibleItems={visibleItems} />
+  );
 
   // render
   return (
     <View style={styles.container}>
       <FlatList
+        testID='animated-flatlist'
         data={SAMPLE_DATA}
         keyExtractor={item => item.id.toString()}
         contentContainerStyle={styles.contentContainerStyle}

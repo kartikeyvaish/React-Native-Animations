@@ -1,3 +1,6 @@
+// Packages Imports
+import { View } from "react-native";
+
 // Component Imports
 import AppContainer from "../../components/AppContainer";
 import BackdropFlatlist from "./components/BackdropFlatlist";
@@ -14,9 +17,11 @@ function MoviesSlider() {
   // render
   return (
     <AppContainer>
-      <BackdropFlatlist movies={Movies} scrollX={scrollX} />
+      <View testID='movies-slider-component'>
+        <BackdropFlatlist movies={Movies} scrollX={scrollX} />
 
-      <MoviesFlatlist movies={Movies} onScroll={onScroll} scrollX={scrollX} />
+        <MoviesFlatlist movies={Movies} onScroll={onScroll} scrollX={scrollX} />
+      </View>
     </AppContainer>
   );
 }

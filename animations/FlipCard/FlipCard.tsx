@@ -1,7 +1,13 @@
 // Packages Imports
 import { useState } from "react";
 import { View, StyleSheet, Pressable } from "react-native";
-import Animated, { interpolate, runOnJS, useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, {
+  interpolate,
+  runOnJS,
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from "react-native-reanimated";
 
 // Local Imports
 import AnimatedText from "../../components/AnimatedText";
@@ -64,7 +70,7 @@ function FlipCard() {
       <View style={{ flex: 1 }}>
         <View style={styles.layoutContainer}>
           <AnimatedText
-            text="Kartikey Vaish"
+            text='Kartikey Vaish'
             marginTop={30}
             marginLeft={25}
             size={30}
@@ -74,7 +80,7 @@ function FlipCard() {
           />
 
           <AnimatedText
-            text="1234 5678 9876 1452"
+            text='1234 5678 9876 1452'
             marginTop={40}
             marginLeft={25}
             size={18}
@@ -84,7 +90,7 @@ function FlipCard() {
           />
 
           <AnimatedText
-            text="08/26"
+            text='08/26'
             marginTop={10}
             marginLeft={25}
             size={14}
@@ -95,7 +101,7 @@ function FlipCard() {
 
           <View style={{ position: "absolute", bottom: 20, right: 20 }}>
             <AnimatedText
-              text="VISA"
+              text='VISA'
               size={14}
               color={ColorPallete.white}
               style={[{ fontWeight: "500" }, frontStyles]}
@@ -112,7 +118,7 @@ function FlipCard() {
       <>
         <Animated.View style={[styles.cvvStrip, backStyles]} />
 
-        <AnimatedText text="123" style={[styles.CvvText, backStyles]} />
+        <AnimatedText text='123' style={[styles.CvvText, backStyles]} />
       </>
     );
   };
@@ -120,7 +126,7 @@ function FlipCard() {
   // render
   return (
     <AppContainer style={styles.container}>
-      <Pressable onPress={toggleRotate}>
+      <Pressable onPress={toggleRotate} testID='flip-card-component'>
         <Animated.View style={[styles.cardContainer, animatedStyles]}>
           {FrontPart()}
           {BackPart()}

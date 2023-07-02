@@ -21,29 +21,29 @@ function WhatsAppMic() {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='whatsapp-mic-component'>
       <View style={styles.animationContainer}>
         {/* Trash Icon Container */}
         <Animated.View style={[styles.iconsCommonStyles, trashAnimatedStyles]}>
-          <Ionicons name="trash-bin-sharp" size={40} color="black" />
+          <Ionicons name='trash-bin-sharp' size={40} color='black' />
         </Animated.View>
 
         {/* Microphone Icon Container */}
         <BlinkingComponent shouldBlink={IsRecording} containerStyle={styles.iconsCommonStyles}>
           <Animated.View style={microphoneAnimatedStyles}>
-            <Feather name="mic" size={24} color="red" />
+            <Feather name='mic' size={24} color='red' />
           </Animated.View>
         </BlinkingComponent>
       </View>
 
       {/* Start Recording */}
       <View style={styles.buttonsContainer}>
-        <Button title="Start Recording" onPress={StartRecording} color="green" />
+        <Button title='Start Recording' onPress={StartRecording} color='green' />
       </View>
 
       {/* Stop Recording */}
       <View style={[styles.buttonsContainer, { bottom: 50 }]}>
-        <Button title="Stop Recording" onPress={StopRecording} color="red" />
+        <Button title='Stop Recording' onPress={StopRecording} color='red' />
       </View>
     </View>
   );

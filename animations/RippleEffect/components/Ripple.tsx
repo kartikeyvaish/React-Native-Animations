@@ -76,7 +76,7 @@ const Ripple: React.FC<RippleProps> = ({ style, onTap, children }) => {
   });
 
   return (
-    <View ref={aRef} style={style}>
+    <View ref={aRef} style={style} testID='ripple-tapper-component'>
       <TapGestureHandler onGestureEvent={tapGestureEvent}>
         <Animated.View style={[style, { overflow: "hidden" }]}>
           <View>{children}</View>

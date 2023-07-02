@@ -25,7 +25,7 @@ function ShakeItUp() {
   const Shuffle = () => SetData(ShuffleArray(Data));
 
   // render
-  return <ShakerView data={Data} />;
+  return <ShakerView testID='shaker-view' data={Data} />;
 }
 
 // exports

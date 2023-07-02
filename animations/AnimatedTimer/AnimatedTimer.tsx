@@ -29,6 +29,7 @@ function AnimatedTimer() {
         {buttonVisible ? (
           <Animated.FlatList
             data={TIMINGS}
+            testID='animated-timer-flatlist'
             keyExtractor={(_, index) => index.toString()}
             horizontal={true}
             renderItem={({ item, index }) => <NumberCard number={item.toString()} />}
@@ -37,11 +38,23 @@ function AnimatedTimer() {
           />
         ) : null}
 
-        <StartButton onPress={startAnimation} visible={buttonVisible} />
+        <StartButton
+          testID='animated-timer-start-button'
+          onPress={startAnimation}
+          visible={buttonVisible}
+        />
 
-        <TimerMover visible={!buttonVisible} transalteY={transalteY} />
+        <TimerMover
+          testID='animated-timer-mover-button'
+          visible={!buttonVisible}
+          transalteY={transalteY}
+        />
 
-        <TimerCounter counterValue={timerCounter} visible={!buttonVisible} />
+        <TimerCounter
+          testID='animated-timer-counter-button'
+          counterValue={timerCounter}
+          visible={!buttonVisible}
+        />
       </View>
     </>
   );

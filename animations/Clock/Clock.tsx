@@ -28,7 +28,7 @@ function Clock() {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='clock-component'>
       <View
         style={[
           styles.outerCircle,

@@ -9,12 +9,13 @@ import { ITEM_HEIGHT } from "../constants/configs";
 export interface ShakerViewProps {
   data: Array<any>;
   itemHeight?: number;
+  testID?: string;
 }
 
 // function component for ShakerView
 function ShakerView(props: ShakerViewProps) {
   // Destructuring props
-  const { data, itemHeight } = props;
+  const { data, itemHeight, testID } = props;
 
   // scroll view heightt
   const scrollViewHeight = itemHeight ? itemHeight : Math.floor(data.length / 2) * ITEM_HEIGHT;
@@ -29,7 +30,7 @@ function ShakerView(props: ShakerViewProps) {
 
   // render
   return (
-    <ScrollView contentContainerStyle={containerStyles} scrollEnabled>
+    <ScrollView testID={testID} contentContainerStyle={containerStyles} scrollEnabled>
       {data.map((item, index) => (
         <Item id={item.id} source={item.source} key={index} />
       ))}

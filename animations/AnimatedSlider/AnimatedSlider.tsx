@@ -29,6 +29,7 @@ function AnimatedSlider() {
     <View style={styles.container}>
       <Animated.FlatList
         data={IMAGES}
+        testID='animated-slider'
         keyExtractor={item => item._id.toString()}
         renderItem={({ item }) => <ImageCard {...item} scrolling={scrolling} />}
         horizontal

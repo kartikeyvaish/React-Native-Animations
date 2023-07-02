@@ -63,7 +63,12 @@ function Progress(props: ProgressProps) {
 
   // AnimatedProps for the circle
   const circleAnimatedProps = useAnimatedProps(() => {
-    const SVG_Progress = interpolate(derivedProgressValue.value, [0, 100], [100, 0], Extrapolate.CLAMP);
+    const SVG_Progress = interpolate(
+      derivedProgressValue.value,
+      [0, 100],
+      [100, 0],
+      Extrapolate.CLAMP
+    );
 
     // This dash offset is the inner circle progress
     return {
@@ -81,21 +86,31 @@ function Progress(props: ProgressProps) {
   ];
 
   // const style for the label text
-  const labelTextStyles: StyleProp<TextStyle> = [{ color: labelColor, fontSize: labelSize }, labelStyle];
+  const labelTextStyles: StyleProp<TextStyle> = [
+    { color: labelColor, fontSize: labelSize },
+    labelStyle,
+  ];
 
   // render
   return (
-    <Svg width={size} height={size}>
-      <Circle stroke={outerCircleColor} fill="none" cx={size / 2} cy={size / 2} r={radius} strokeWidth={strokeWidth} />
+    <Svg width={size} height={size} testID='progress-component'>
+      <Circle
+        stroke={outerCircleColor}
+        fill='none'
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        strokeWidth={strokeWidth}
+      />
 
       <AnimatedCircle
         stroke={progressCircleColor}
-        fill="none"
+        fill='none'
         cx={size / 2}
         cy={size / 2}
         r={radius}
         strokeDasharray={`${circum} ${circum}`}
-        strokeLinecap="round"
+        strokeLinecap='round'
         transform={`rotate(-90, ${size / 2}, ${size / 2})`}
         strokeWidth={strokeWidth}
         animatedProps={circleAnimatedProps}
