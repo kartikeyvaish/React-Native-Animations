@@ -132,7 +132,7 @@ const components: any = [
     {
         id: "28",
         name: 'Fling Card Stack',
-        screen: 'FlingCardStack'
+        screen: 'FlingCardStackScreen'
     }
 ]
 
