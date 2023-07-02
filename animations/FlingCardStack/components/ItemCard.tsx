@@ -2,7 +2,12 @@
 import { View, StyleSheet, Text, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
-import Animated, { SharedValue, interpolate, useAnimatedStyle } from "react-native-reanimated";
+import Animated, {
+  Extrapolate,
+  SharedValue,
+  interpolate,
+  useAnimatedStyle,
+} from "react-native-reanimated";
 
 // Local Imports (components/types/utils)
 import { DEFAULT_LOCATION_IMAGE } from "../mock/data";
@@ -46,20 +51,31 @@ function ItemCard(props: ItemCardProps) {
           translateY: interpolate(
             currentItemIndex.value,
             [index - 1, index, index + 1],
-            [-30, 0, ScreenHeight * 0.6 + 30]
+            [-20, 0, ScreenHeight * 0.6 + 30]
           ),
         },
         {
-          scale: interpolate(currentItemIndex.value, [index - 1, index, index + 1], [0.9, 1, 1]),
+          scale: interpolate(currentItemIndex.value, [index - 1, index, index + 1], [0.96, 1, 1]),
         },
       ],
+    };
+  });
+
+  const animatedTextStyle = useAnimatedStyle(() => {
+    return {
+      opacity: interpolate(
+        currentItemIndex.value,
+        [index - 2, index, index + 1],
+        [0, 1, 1],
+        Extrapolate.CLAMP
+      ),
     };
   });
 
   // render
   return (
     <Animated.View style={[styles.container, animatedStyles]}>
-      <Text style={styles.title}>{type}</Text>
+      <Animated.Text style={[styles.title, animatedTextStyle]}>{type}</Animated.Text>
 
       <View style={[styles.row]}>
         <Ionicons name='time-outline' style={styles.icons} />
