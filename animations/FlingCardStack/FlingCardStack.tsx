@@ -42,7 +42,7 @@ function FlingCardStack(props: FlingCardStackProps) {
   // render
   return (
     <GestureDetector gesture={Gesture.Exclusive(flingUpAction, flingDownAction)}>
-      <View style={styles.container} pointerEvents='box-none'>
+      <View style={styles.container} pointerEvents='box-none' testID='fling-stack-component'>
         {CARD_DATA.map((item, index) => (
           <ItemCard
             {...item}
