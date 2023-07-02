@@ -1,6 +1,6 @@
 # Animations
 
-A repo for some React Native Animations that I've practised. These animations are highly inspired by [Catalin Miron](https://www.youtube.com/c/CatalinMironDev/videos) and [Enzo Manuel Mangano AKA Reactiive](https://www.youtube.com/c/Reactiive).
+A repo for some React Native Animations that I've practiced. These animations are highly inspired by [Catalin Miron](https://www.youtube.com/c/CatalinMironDev/videos) and [Enzo Manuel Mangano AKA Reactiive](https://www.youtube.com/c/Reactiive).
 
 ## [1. Clock](https://github.com/kartikeyvaish/Animations/tree/main/animations/Clock)
 
@@ -12,7 +12,7 @@ A repo for some React Native Animations that I've practised. These animations ar
 
 ## [5. Ringing](https://github.com/kartikeyvaish/Animations/tree/main/animations/Ringing)
 
-## [6. Breating Loader](https://github.com/kartikeyvaish/Animations/tree/main/animations/BreathingLoader)
+## [6. Breathing Loader](https://github.com/kartikeyvaish/Animations/tree/main/animations/BreathingLoader)
 
 ## [7. Tally Counter](https://github.com/kartikeyvaish/Animations/tree/main/animations/TallyCounter)
 
@@ -53,3 +53,5 @@ A repo for some React Native Animations that I've practised. These animations ar
 ## [25. Animated OTP Input](https://github.com/kartikeyvaish/Animations/tree/main/animations/AnimatedOTPInput)
 
 ## [26. Metaball Animation](https://github.com/kartikeyvaish/Animations/tree/main/animations/MetaBallAnimation)
+
+## [27. Fling Card Stack](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/FlingCardStack)
