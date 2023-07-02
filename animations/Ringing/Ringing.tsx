@@ -11,13 +11,13 @@ import WaveView from "./components/WaveView";
 function Ringing() {
   // render
   return (
-    <View style={[styles.container, styles.center]}>
+    <View style={[styles.container, styles.center]} testID='ringing-component'>
       <View style={[styles.iconContainer, styles.center]}>
         {[...Array(DEFAULT_RINGS_COUNT).keys()].map((index: number) => (
           <WaveView key={index} index={index} />
         ))}
 
-        <Feather name="phone-outgoing" size={28} color={ColorPallete.white} />
+        <Feather name='phone-outgoing' size={28} color={ColorPallete.white} />
       </View>
     </View>
   );
