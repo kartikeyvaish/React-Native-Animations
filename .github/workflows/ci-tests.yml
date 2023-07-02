@@ -36,12 +36,29 @@ jobs:
 
           if [ ${{ steps.test.outputs.return-code }} -eq 0 ]; then
             label='ci-passing'
-            color='#0E8A16'
+            color='0E8A16'
           else
             label='ci-failing'
-            color='#B60205'
+            color='B60205'
           fi
 
-          curl -X POST -H "Authorization: Bearer $GITHUB_TOKEN" \
-            -d "{\"labels\": [\"$label\"], \"color\": \"$color\"}" \
+          label_exists=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/$owner/$repo/labels/$label")
+
+          if [ -z "$label_exists" ]; then
+            response=$(curl -X POST -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              -d "{\"name\": \"$label\", \"color\": \"$color\"}" \
+              "https://api.github.com/repos/$owner/$repo/labels")
+
+            if [ $(jq -r '.name' <<< "$response") != "$label" ]; then
+              echo "Failed to create the label: $label"
+              exit 1
+            fi
+          fi
+
+          curl -X POST -s -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -d "[]" \
             "https://api.github.com/repos/$owner/$repo/issues/$pull_request_number/labels"
