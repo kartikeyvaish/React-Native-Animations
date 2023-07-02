@@ -32,7 +32,7 @@ function ParallaxCaraousel() {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='parallax-carousel-component'>
       <AnimatedFlatList
         data={IMAGES}
         keyExtractor={(item: any) => item._id.toString()}
