@@ -30,7 +30,7 @@ describe("<AnimatedTimer />", () => {
     const startButton = getByTestId("animated-timer-start-button");
 
     expect(flatList).toBeTruthy();
-    expect(startButton).toBeTruthy();
+    expect(startButton).toBeFalsy();
 
     expect(queryByTestId("animated-timer-mover-button")).toBeNull();
     expect(queryByTestId("animated-timer-counter-button")).toBeNull();
