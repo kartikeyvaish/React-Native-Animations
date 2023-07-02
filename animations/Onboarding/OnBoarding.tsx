@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useCallback } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Animated, {
@@ -7,10 +6,13 @@ import Animated, {
   useDerivedValue,
   useSharedValue,
 } from "react-native-reanimated";
+import { AntDesign } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+
+// Local imports
+import Dot from "./components/Dot";
 import Page, { PAGE_WIDTH } from "./components/Page";
 import { BACKGROUND_COLOR, PAGES } from "./constants";
-import { AntDesign } from "@expo/vector-icons";
-import Dot from "./components/Dot";
 
 export default function OnBoarding() {
   const translateX = useSharedValue(0);
@@ -33,8 +35,9 @@ export default function OnBoarding() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
+    <View style={styles.container} testID='onboarding-screen'>
+      <StatusBar style='auto' />
+
       <Animated.ScrollView
         ref={scrollRef as any}
         style={{ flex: 1 }}
@@ -48,20 +51,20 @@ export default function OnBoarding() {
           <Page key={index.toString()} page={page} translateX={translateX} index={index} />
         ))}
       </Animated.ScrollView>
+
       <View style={styles.footer}>
-        {/* Paginator */}
         <View style={[styles.fillCenter, { flexDirection: "row" }]}>
           {PAGES.map((_, index) => {
             return <Dot key={index.toString()} index={index} activeDotIndex={activeIndex} />;
           })}
         </View>
-        {/* Text Container */}
+
         <View style={styles.fillCenter}>
           <Text style={styles.text}>View Board</Text>
         </View>
-        {/* iconContainer */}
+
         <View style={styles.fillCenter}>
-          <AntDesign name="arrowright" size={24} color="black" onPress={onIconPress} />
+          <AntDesign name='arrowright' size={24} color='black' onPress={onIconPress} />
         </View>
       </View>
     </View>
