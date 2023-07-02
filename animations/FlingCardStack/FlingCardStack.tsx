@@ -1,11 +1,11 @@
 // Packages Imports (from node_modules)
 import { View, StyleSheet } from "react-native";
 import { Directions, Gesture, GestureDetector } from "react-native-gesture-handler";
+import { useSharedValue, withTiming } from "react-native-reanimated";
 
 // Local Imports (components/types/utils)
 import ItemCard from "./components/ItemCard";
 import { CARD_DATA } from "./mock/data";
-import { useSharedValue, withTiming } from "react-native-reanimated";
 
 // interface for FlingCardStack component
 export interface FlingCardStackProps {}
@@ -33,7 +33,7 @@ function FlingCardStack(props: FlingCardStackProps) {
     .onStart(() => {
       let currentValue = Math.floor(currentItemIndex.value);
 
-      if (currentValue === CARD_DATA.length) return;
+      if (currentValue === CARD_DATA.length - 1) return;
 
       currentValue = Math.floor(Math.min(currentItemIndex.value + 1, CARD_DATA.length));
       currentItemIndex.value = withTiming(currentValue);
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "dodgerblue",
     alignItems: "center",
   },
 });
