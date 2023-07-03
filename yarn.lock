@@ -7325,10 +7325,10 @@ react-native-skia-gesture@^0.1.172:
   resolved "https://registry.yarnpkg.com/react-native-skia-gesture/-/react-native-skia-gesture-0.1.172.tgz#dccafe6418ec9a8508e28d47b9433d32a99bd75a"
   integrity sha512-EFSTydpCwHXV4k4bV4bhp1hDNdz9xzEe8SkuRxzQtzqHJL1cEhnQgjt1oSDE0kg21Y1YEalsvHxrntdHw8sV2g==
 
-react-native-svg@13.4.0:
-  version "13.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.4.0.tgz#82399ba0956c454144618aa581e2d748dd3f010a"
-  integrity sha512-B3TwK+H0+JuRhYPzF21AgqMt4fjhCwDZ9QUtwNstT5XcslJBXC0FoTkdZo8IEb1Sv4suSqhZwlAY6lwOv3tHag==
+react-native-svg@13.9.0:
+  version "13.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-13.9.0.tgz#8df8a690dd00362601f074dec5d3a86dd0f99c7f"
+  integrity sha512-Ey18POH0dA0ob/QiwCBVrxIiwflhYuw0P0hBlOHeY4J5cdbs8ngdKHeWC/Kt9+ryP6fNoEQ1PUgPYw2Bs/rp5Q==
   dependencies:
     css-select "^5.1.0"
     css-tree "^1.1.3"
