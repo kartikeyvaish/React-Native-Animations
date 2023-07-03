@@ -36,7 +36,7 @@
     "react-native-screens": "~3.20.0",
     "react-native-skia-gesture": "^0.1.172",
     "react-native-svg": "13.4.0",
-    "react-native-web": "~0.18.10",
+    "react-native-web": "~0.19.6",
     "react-test-renderer": "18.2.0"
   },
   "devDependencies": {
