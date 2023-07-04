@@ -24,6 +24,7 @@ import FlipCard from "../animations/FlipCard/FlipCard";
 import GridMagnification from "../animations/Grid Magnification/GridMagnification";
 import ListRemover from "../animations/ListRemover/ListRemover";
 import MenuToggler from "../animations/MenuToggler/MenuToggler";
+import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import OnBoarding from "../animations/Onboarding/OnBoarding";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
@@ -31,11 +32,11 @@ import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import RippleEffect from "../animations/RippleEffect/RippleEffect";
 import ShakeItUp from "../animations/ShakeItUp/ShakeItUp";
+import SwiggyScreen from "../animations/Swiggy/SwiggyScreen";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
-import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -75,6 +76,7 @@ function AppNavigator() {
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
       <Stack.Screen name={"ShakeItUp"} component={ShakeItUp} />
+      <Stack.Screen name={"SwiggyScreen"} component={SwiggyScreen} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"ThemeChanger"} component={ThemeChanger} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
