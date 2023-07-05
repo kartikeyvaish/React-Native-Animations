@@ -8,23 +8,26 @@ import SwiggyScreenLoader from "./components/SwiggyScreenLoader";
 
 // Named imports
 import Animated, { FadeIn, FadeOut } from "react-native-reanimated";
-
-// interface for SwiggyScreen component
-export interface SwiggyScreenProps {}
+import { SwiggyScreenProps } from "./navigation/NavigationProps";
 
 // functional component for SwiggyScreen
-function SwiggyScreen(props: SwiggyScreenProps) {
+function SwiggyScreen(props: SwiggyScreenProps<"HomeScreen">) {
   // Destructuring props
-  const {} = props;
+  const { navigation } = props;
 
   const [shortListLoading, setShortListLoading] = useState<boolean>(true);
+
+  const goToCategoriesScreen = () => {
+    setShortListLoading(false);
+    navigation.navigate("CategoriesScreen");
+  };
 
   // render
   return (
     <AppContainer style={styles.container}>
       {shortListLoading ? (
         <Animated.View entering={FadeIn} exiting={FadeOut}>
-          <SwiggyScreenLoader onAnimationFinish={() => setShortListLoading(false)} />
+          <SwiggyScreenLoader onAnimationFinish={goToCategoriesScreen} />
         </Animated.View>
       ) : null}
     </AppContainer>
