@@ -8,6 +8,8 @@ import {
   Image,
   ImageSourcePropType,
   ActivityIndicator,
+  Platform,
+  Pressable,
 } from "react-native";
 import Animated, { FadeIn, Layout, SlideOutLeft } from "react-native-reanimated";
 
@@ -16,6 +18,7 @@ import AppContainer from "../../../components/AppContainer";
 import FetchingRestaurantsLoader from "../components/FetchingRestaurantsLoader";
 import useThemeManager from "../../../hooks/useThemeManager";
 import { ScreenHeight, ScreenWidth } from "../../../constants/Dimensions";
+import { SwiggyScreenProps } from "../navigation/NavigationProps";
 
 // interface for CategoriesScreen component
 export interface CategoriesScreenProps {}
@@ -55,7 +58,15 @@ function CategoriesContainer(props: CategoriesContainerProps) {
               ? 30
               : ScreenWidth - 100 - 30
           }
-          top={index === data.length - 1 ? undefined : index <= 1 ? 50 : (ScreenHeight - 150) / 2}
+          top={
+            index === data.length - 1
+              ? undefined
+              : index <= 1
+              ? Platform.OS === "ios"
+                ? 100
+                : 50
+              : (ScreenHeight - 150) / 2
+          }
           bottom={index === data.length - 1 ? 50 : undefined}
           layoutEnabled={layoutEnabled}
           imageSource={{ uri: "https://cdn-icons-png.flaticon.com/512/1046/1046818.png" }}
@@ -70,6 +81,8 @@ function FoodCategoryItem(props: FoodCategoryItemProps) {
   // Destrcuturing props
   const { left, top, bottom, atRequiredPlace, layoutEnabled, imageSource, onPress, loading } =
     props;
+
+  const { Theme } = useThemeManager();
 
   const containerStyle: StyleProp<ViewStyle> = [
     styles.foodItemContainer,
@@ -89,28 +102,31 @@ function FoodCategoryItem(props: FoodCategoryItemProps) {
     <Animated.View
       layout={layoutEnabled ? Layout.duration(200).springify().damping(10) : undefined}
       style={containerStyle}
-      onTouchEnd={onPress}
     >
-      {imageSource ? (
-        <View style={{ width: 100, height: 100, borderRadius: 100 }}>
-          <Image
-            source={imageSource}
-            style={{ width: "100%", height: "100%", borderRadius: 100 }}
-          />
+      <Pressable onPress={onPress}>
+        {imageSource ? (
+          <View style={{ width: 100, height: 100, borderRadius: 100 }}>
+            <Image
+              source={imageSource}
+              style={{ width: "100%", height: "100%", borderRadius: 100 }}
+            />
 
-          {loading ? <ActivityIndicator size={30} style={styles.loader} /> : null}
-        </View>
-      ) : null}
+            {loading ? <ActivityIndicator size={30} style={styles.loader} /> : null}
+          </View>
+        ) : null}
 
-      <Animated.Text style={styles.foodName}>Food Name</Animated.Text>
+        <Animated.Text style={[styles.foodName, { color: Theme.colors.text }]}>
+          Food Name
+        </Animated.Text>
+      </Pressable>
     </Animated.View>
   );
 }
 
 // functional component for CategoriesScreen
-function CategoriesScreen(props: CategoriesScreenProps) {
+function CategoriesScreen(props: SwiggyScreenProps<"CategoriesScreen">) {
   // Destructuring props
-  const {} = props;
+  const { navigation } = props;
 
   const [loading, setLoading] = useState(false);
   const [completedLoading, setCompletedLoading] = useState(false);
@@ -118,7 +134,7 @@ function CategoriesScreen(props: CategoriesScreenProps) {
   useEffect(() => {
     setTimeout(() => {
       setCompletedLoading(true);
-    }, 200);
+    }, 1000);
 
     return () => {};
   }, []);
@@ -129,7 +145,7 @@ function CategoriesScreen(props: CategoriesScreenProps) {
     setLoading(true);
 
     setTimeout(() => {
-      setLoading(false);
+      navigation.replace("MenuScreen");
     }, 3000);
   };
 
