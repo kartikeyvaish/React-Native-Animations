@@ -19,7 +19,7 @@ function SwiggyScreen(props: SwiggyScreenProps<"HomeScreen">) {
 
   const goToCategoriesScreen = () => {
     setShortListLoading(false);
-    navigation.navigate("CategoriesScreen");
+    navigation.replace("CategoriesScreen");
   };
 
   // render
