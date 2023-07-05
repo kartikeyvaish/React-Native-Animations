@@ -9,6 +9,7 @@ import { SwiggyStackParamsList } from "./NavigationProps";
 
 // Screen imports
 import CategoriesScreen from "../screens/CategoriesScreen";
+import MenuScreen from "../screens/MenuScreen";
 import SwiggyScreen from "../SwiggyScreen";
 
 // Create a Stack Navigator
@@ -27,6 +28,7 @@ function SwiggyNavigator() {
       {/* App Screens */}
       <Stack.Screen name={"HomeScreen"} component={SwiggyScreen} />
       <Stack.Screen name={"CategoriesScreen"} component={CategoriesScreen} />
+      <Stack.Screen name={"MenuScreen"} component={MenuScreen} />
     </Stack.Navigator>
   );
 }

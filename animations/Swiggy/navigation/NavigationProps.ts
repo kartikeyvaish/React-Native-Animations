@@ -8,6 +8,7 @@ export type SwiggyStackParamsList = {
     // Swiggy Stack Screens
     HomeScreen: undefined;
     CategoriesScreen: undefined;
+    MenuScreen: undefined;
 };
 
 // Props for Swiggy Navigator's Screens
