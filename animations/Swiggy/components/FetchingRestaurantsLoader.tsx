@@ -36,6 +36,7 @@ function MoverCards(props: MoverCards) {
 
   const containerStyle: StyleProp<ViewStyle> = {
     backgroundColor: dark ? "white" : "#212121",
+    shadowColor: dark ? "white" : "#212121",
   };
 
   const animatedStyles = useAnimatedStyle(() => {
@@ -88,6 +89,13 @@ function MoverCards(props: MoverCards) {
       Extrapolate.CLAMP
     );
 
+    const rotateX = interpolate(
+      loadingProgress.value,
+      [-TRANSLATE_DISTANCE, 0, TRANSLATE_DISTANCE],
+      [40, 0, -40],
+      Extrapolate.CLAMP
+    );
+
     return {
       zIndex,
       opacity:
@@ -109,6 +117,9 @@ function MoverCards(props: MoverCards) {
         },
         {
           translateX: loadingProgress.value,
+        },
+        {
+          rotateY: `${rotateX}deg`,
         },
       ],
     };
@@ -222,6 +233,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 1,
+    elevation: 10,
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
+    backgroundColor: "white",
   },
   animatedText: {
     fontSize: 20,
