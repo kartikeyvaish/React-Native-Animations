@@ -1,4 +1,4 @@
-import { FilterItemProps } from "../types/Types";
+import { FilterItemProps, Restaurant } from "../types/Types";
 
 export const FOOD_CATEGORIES: Array<FilterItemProps> = [
     {
@@ -23,7 +23,7 @@ export const FOOD_CATEGORIES: Array<FilterItemProps> = [
     },
 ];
 
-export const RESTAURANTS = [
+export const RESTAURANTS: Array<Restaurant> = [
     {
         id: '1',
         restaurantName: 'Burger King',
