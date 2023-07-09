@@ -11,7 +11,7 @@ import useThemeManager from "../../../hooks/useThemeManager";
 // functional component for Chips
 function Chips(props: ChipsProps) {
   // Destructuring props
-  const { name, isSelected, onPress } = props;
+  const { name, isSelected, onPress, containerStyles, children } = props;
 
   const containerStyle = {
     backgroundColor: isSelected ? "lightgrey" : undefined,
@@ -22,7 +22,7 @@ function Chips(props: ChipsProps) {
   // render
   return (
     <Animated.View layout={Layout}>
-      <RectButton style={styles.container} onPress={onPress}>
+      <RectButton style={[styles.container, containerStyles]} onPress={onPress}>
         <Animated.View style={[styles.btnInnerContainer, containerStyle]} layout={Layout}>
           {isSelected ? (
             <AnimatedText
@@ -39,6 +39,8 @@ function Chips(props: ChipsProps) {
             layout={Layout}
             color={isSelected ? (Theme.dark ? "black" : undefined) : undefined}
           />
+
+          {children}
         </Animated.View>
       </RectButton>
     </Animated.View>
