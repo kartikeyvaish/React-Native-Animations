@@ -67,10 +67,21 @@ function Dots(props: DotsProps) {
     };
   });
 
+  const animatedTextStyle = useAnimatedStyle(() => {
+    const opacity = interpolate(
+      scrollProgress.value,
+      [(index - 1) * ScreenWidth, index * ScreenWidth, (index + 1) * ScreenWidth],
+      [0, 1, 0],
+      Extrapolate.CLAMP
+    );
+
+    return { opacity };
+  });
+
   // render
   return (
     <Animated.View style={[styles.container, animatedContainerStyle]}>
-      <Animated.Text style={styles.label}>
+      <Animated.Text style={[styles.label, animatedTextStyle]}>
         {index + 1}/{totalItems}
       </Animated.Text>
     </Animated.View>
