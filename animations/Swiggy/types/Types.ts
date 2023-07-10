@@ -48,3 +48,15 @@ export interface MenuItem {
     description: string;
     isCustomizable: boolean;
 }
+
+// interface for CartItem
+// this will be an object with key as food item id and value as quantity
+interface CartItems {
+    [key: string]: number;
+}
+
+export interface Cart {
+    totalItems: number;
+    totalPrice: number;
+    cartItems: CartItems;
+}
