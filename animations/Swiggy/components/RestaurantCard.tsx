@@ -1,34 +1,44 @@
 // Packages Imports (from node_modules)
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, FlatList } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 // Local Imports (components/types/utils)
+import FoodItem from "./FoodItem";
+import Seperator from "./Seperator";
+
+// Named imports
 import { RestaurantCardProps } from "../types/Types";
 import { ScreenWidth } from "../../../constants/Dimensions";
-import FoodItem from "./FoodItem";
-import { RESTAURANTS } from "../mock/SwiggyMockData";
 
 // functional component for RestaurantCard
 function RestaurantCard(props: RestaurantCardProps) {
   // Destructuring props
-  const {} = props;
+  const { items, isTrending } = props;
 
   // render
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        <View style={styles.trendingLabelContainer}>
-          <MaterialCommunityIcons
-            name='lightning-bolt'
-            size={16}
-            color='purple'
-            style={styles.lightningIcon}
-          />
+        <FlatList
+          data={items}
+          ListHeaderComponent={
+            isTrending ? (
+              <View style={styles.trendingLabelContainer}>
+                <MaterialCommunityIcons
+                  name='lightning-bolt'
+                  size={16}
+                  color='purple'
+                  style={styles.lightningIcon}
+                />
 
-          <Text style={styles.trendingLabel}>Trending in your city</Text>
-        </View>
-
-        <FoodItem {...RESTAURANTS[0].items[0]} />
+                <Text style={styles.trendingLabel}>Trending in your city</Text>
+              </View>
+            ) : null
+          }
+          keyExtractor={(_, index) => index.toString()}
+          renderItem={({ item }) => <FoodItem {...item} />}
+          ItemSeparatorComponent={() => <Seperator />}
+        />
       </View>
     </View>
   );
