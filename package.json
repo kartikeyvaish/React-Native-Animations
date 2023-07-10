@@ -10,6 +10,7 @@
     "test": "jest --clearCache && jest"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "4",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
