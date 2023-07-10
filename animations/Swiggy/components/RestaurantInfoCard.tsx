@@ -23,24 +23,33 @@ function RestaurantInfoCard(props: HotelInfoCardProps) {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='restaurant-info-card-container-test-id'>
       <View style={[styles.rowContainer]}>
-        <Text style={styles.restaurantNameText}>{restaurantName}</Text>
+        <Text testID='rest-info-card-name-test-id' style={styles.restaurantNameText}>
+          {restaurantName}
+        </Text>
 
         <View style={styles.rowContainer}>
           <MaterialIcons name='stars' size={24} color='darkgreen' style={{ marginRight: 5 }} />
-          <Text style={styles.boldText}>{`${rating} (${ratingCountText})`}</Text>
+          <Text
+            testID='rest-info-card-rating-test-id'
+            style={styles.boldText}
+          >{`${rating} (${ratingCountText})`}</Text>
         </View>
       </View>
 
       <View style={styles.rowContainer}>
-        <Text style={styles.locationText}>
+        <Text style={styles.locationText} testID='rest-info-card-location-distance-test-id'>
           {location}, {distance}
         </Text>
-        <Text style={styles.boldText}>{deliveryDuration}</Text>
+        <Text testID='rest-info-card-duration-test-id' style={styles.boldText}>
+          {deliveryDuration}
+        </Text>
       </View>
 
-      <Text style={styles.locationText}>{discountText}</Text>
+      <Text testID='rest-info-card-discount-test-id' style={styles.locationText}>
+        {discountText}
+      </Text>
     </View>
   );
 }
