@@ -14,6 +14,7 @@ export interface ChipsProps {
     onPress?: () => void;
     containerStyles?: StyleProp<ViewStyle>
     children?: ReactNode
+    color?: string;
 }
 
 // interface for MenuScreenHeader component
@@ -23,7 +24,7 @@ export interface MenuScreenHeaderProps {
 }
 
 // interface for RestaurantCard component
-export interface RestaurantCardProps { }
+export interface RestaurantCardProps extends Restaurant { }
 
 export interface Restaurant {
     id: string;
@@ -35,6 +36,7 @@ export interface Restaurant {
     ratingCountText: string;
     deliveryDuration: string;
     items: MenuItem[];
+    isTrending?: boolean;
 }
 
 export interface MenuItem {
