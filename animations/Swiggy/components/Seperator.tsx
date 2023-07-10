@@ -24,7 +24,7 @@ export default Seperator;
 // styles for Seperator
 const styles = StyleSheet.create({
   container: {
-    width: "90%",
+    width: "95%",
     height: 1,
     backgroundColor: "#e0e0e0",
     alignSelf: "center",
