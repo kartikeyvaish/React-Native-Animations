@@ -15,12 +15,22 @@ function MenuScreenHeader(props: MenuScreenHeaderProps) {
 
   // render
   return (
-    <View style={styles.container}>
-      <RectButton style={styles.backBtnContainer} onPress={onBackPress}>
+    <View style={styles.container} testID='menu-screen-header-container-test-id'>
+      <RectButton
+        style={styles.backBtnContainer}
+        onPress={onBackPress}
+        testID='menu-screen-header-button-test-id'
+      >
         <AntDesign name='arrowleft' size={18} color='black' />
       </RectButton>
 
-      <AnimatedText text={headerTitle} style={styles.label} entering={FadeIn} exiting={FadeOut} />
+      <AnimatedText
+        testID='menu-screen-header-text-test-id'
+        text={headerTitle}
+        style={styles.label}
+        entering={FadeIn}
+        exiting={FadeOut}
+      />
     </View>
   );
 }
