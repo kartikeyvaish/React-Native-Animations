@@ -6,6 +6,8 @@ import { useTheme } from "@react-navigation/native";
 // Local Imports
 import AppText from "./AppText";
 import BorderView from "./BorderView";
+
+// Named imports
 import { MenuCardProps } from "../types/ComponentTypes";
 
 // function component for MenuCard
