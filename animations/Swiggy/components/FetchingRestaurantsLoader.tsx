@@ -182,7 +182,12 @@ function FetchingRestaurantsLoader(props: FetchingRestaurantsLoaderProps) {
 
   // render
   return (
-    <Animated.View style={styles.container} entering={FadeIn} exiting={FadeOut}>
+    <Animated.View
+      testID='fetching-restaurant-loader-container-id'
+      style={styles.container}
+      entering={FadeIn}
+      exiting={FadeOut}
+    >
       <MoverCards
         loadingProgress={firstCardTranslateX}
         index={0}
@@ -204,7 +209,11 @@ function FetchingRestaurantsLoader(props: FetchingRestaurantsLoaderProps) {
         progress={loadingProgress}
       />
 
-      <Animated.Text entering={FadeIn} style={[styles.animatedText, textStyles]}>
+      <Animated.Text
+        testID='fetching-restaurant-loader-text-id'
+        entering={FadeIn}
+        style={[styles.animatedText, textStyles]}
+      >
         Shortlisting options for you
       </Animated.Text>
     </Animated.View>
