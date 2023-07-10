@@ -67,7 +67,7 @@ function MenuScreen(props: SwiggyScreenProps<"MenuScreen">) {
 
         <Animated.View style={{ flex: 1 }}>
           <Animated.FlatList
-            data={NEW_RESTAURANTS}
+            data={[...NEW_RESTAURANTS, ...NEW_RESTAURANTS]}
             keyExtractor={item => item.id}
             horizontal={true}
             renderItem={({ item }) => <RestaurantCard {...item} />}
