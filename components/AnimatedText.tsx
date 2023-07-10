@@ -25,6 +25,7 @@ function AnimatedText(props: AnimatedTextProps) {
     exiting = SlideOutUp,
     layout = Layout,
     keepEntExitAni = true,
+    testID,
     ...otherProps
   } = props;
 
@@ -50,6 +51,7 @@ function AnimatedText(props: AnimatedTextProps) {
       key={animatedTextKey ? animatedTextKey : text}
       style={textStyles}
       onPress={onPress}
+      testID={testID}
       {...textProps}
     >
       {text}
