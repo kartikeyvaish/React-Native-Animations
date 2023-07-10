@@ -11,7 +11,7 @@ import useThemeManager from "../../../hooks/useThemeManager";
 // functional component for Chips
 function Chips(props: ChipsProps) {
   // Destructuring props
-  const { name, isSelected, onPress, containerStyles, children } = props;
+  const { name, isSelected, onPress, containerStyles, children, color } = props;
 
   const containerStyle = {
     backgroundColor: isSelected ? "lightgrey" : undefined,
@@ -30,14 +30,14 @@ function Chips(props: ChipsProps) {
               style={styles.removeIcon}
               entering={FadeIn.delay(200)}
               exiting={FadeOut}
-              color={isSelected ? (Theme.dark ? "black" : undefined) : undefined}
+              color={color ? color : isSelected ? (Theme.dark ? "black" : undefined) : undefined}
             />
           ) : null}
 
           <AnimatedText
             text={name}
             layout={Layout}
-            color={isSelected ? (Theme.dark ? "black" : undefined) : undefined}
+            color={color ? color : isSelected ? (Theme.dark ? "black" : undefined) : undefined}
           />
 
           {children}
