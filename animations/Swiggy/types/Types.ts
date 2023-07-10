@@ -31,12 +31,14 @@ export interface Restaurant {
     restaurantName: string;
     location: string;
     distance: string;
+    restaurantLogo: string;
     discountText: string;
     rating: number;
     ratingCountText: string;
     deliveryDuration: string;
     items: MenuItem[];
     isTrending?: boolean;
+    currency: string;
 }
 
 export interface MenuItem {
