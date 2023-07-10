@@ -22,7 +22,11 @@ function Chips(props: ChipsProps) {
   // render
   return (
     <Animated.View layout={Layout}>
-      <RectButton style={[styles.container, containerStyles]} onPress={onPress}>
+      <RectButton
+        testID='chips-test-id'
+        style={[styles.container, containerStyles]}
+        onPress={onPress}
+      >
         <Animated.View style={[styles.btnInnerContainer, containerStyle]} layout={Layout}>
           {isSelected ? (
             <AnimatedText
@@ -30,6 +34,7 @@ function Chips(props: ChipsProps) {
               style={styles.removeIcon}
               entering={FadeIn.delay(200)}
               exiting={FadeOut}
+              testID='remove-icon-test-id'
               color={color ? color : isSelected ? (Theme.dark ? "black" : undefined) : undefined}
             />
           ) : null}
@@ -37,6 +42,7 @@ function Chips(props: ChipsProps) {
           <AnimatedText
             text={name}
             layout={Layout}
+            testID='chips-name-test-id'
             color={color ? color : isSelected ? (Theme.dark ? "black" : undefined) : undefined}
           />
 
