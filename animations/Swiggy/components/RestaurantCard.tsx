@@ -1,12 +1,16 @@
 // Packages Imports (from node_modules)
 import { useState } from "react";
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, Text, FlatList, Platform } from "react-native";
 import Animated, { FadeIn } from "react-native-reanimated";
+import * as Haptics from "expo-haptics";
+import { Image } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { RectButton } from "react-native-gesture-handler";
 
 // Local Imports (components/types/utils)
 import FoodItem from "./FoodItem";
+import RestaurantInfoCard from "./RestaurantInfoCard";
 import Seperator from "./Seperator";
 
 // Named imports
@@ -16,9 +20,15 @@ import { ScreenWidth } from "../../../constants/Dimensions";
 // functional component for RestaurantCard
 function RestaurantCard(props: RestaurantCardProps) {
   // Destructuring props
-  const { items, isTrending } = props;
+  const { items, isTrending, restaurantLogo, restaurantName, currency } = props;
 
   const [cartItems, setCartItems] = useState<Cart>({ totalItems: 0, totalPrice: 0, cartItems: {} });
+
+  const triggerHaptics = () => {
+    if (Platform.OS === "android") return;
+
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+  };
 
   const addItemToCart = (itemIndex: number) => {
     const item = items[itemIndex];
@@ -41,6 +51,8 @@ function RestaurantCard(props: RestaurantCardProps) {
         totalPrice: updatedTotalPrice,
         cartItems: updatedCartItems,
       });
+
+      triggerHaptics();
     }
   };
 
@@ -66,6 +78,8 @@ function RestaurantCard(props: RestaurantCardProps) {
         totalPrice: updatedTotalPrice,
         cartItems: updatedCartItems,
       });
+
+      triggerHaptics();
     }
   };
 
@@ -76,18 +90,28 @@ function RestaurantCard(props: RestaurantCardProps) {
         <FlatList
           data={items}
           ListHeaderComponent={
-            isTrending ? (
-              <View style={styles.trendingLabelContainer}>
-                <MaterialCommunityIcons
-                  name='lightning-bolt'
-                  size={16}
-                  color='purple'
-                  style={styles.lightningIcon}
-                />
+            <>
+              {isTrending ? (
+                <LinearGradient
+                  start={{ x: 0, y: 0.5 }}
+                  colors={["#f0eafe", "#f0eafe", "white"]}
+                  style={styles.trendingLabelContainer}
+                >
+                  <MaterialCommunityIcons
+                    name='lightning-bolt'
+                    size={16}
+                    color='purple'
+                    style={styles.lightningIcon}
+                  />
 
-                <Text style={styles.trendingLabel}>Trending in your city</Text>
-              </View>
-            ) : null
+                  <Text style={styles.trendingLabel}>Trending in your city</Text>
+                </LinearGradient>
+              ) : null}
+
+              <RestaurantInfoCard {...props} />
+
+              <Seperator />
+            </>
           }
           keyExtractor={(_, index) => index.toString()}
           renderItem={({ item, index }) => (
@@ -105,26 +129,24 @@ function RestaurantCard(props: RestaurantCardProps) {
         {cartItems.totalItems > 0 ? (
           <Animated.View style={styles.bottomContainer} entering={FadeIn} exiting={FadeIn}>
             <View style={{ flex: 1.5, flexDirection: "row" }}>
-              <View style={styles.restaurantLogoContainer}></View>
+              <View style={styles.restaurantLogoContainer}>
+                <Image source={{ uri: restaurantLogo }} style={{ flex: 1 }} />
+              </View>
 
-              <Text style={styles.hotelName}>Rominus Pizza..</Text>
+              <Text style={styles.hotelName}>{restaurantName}</Text>
             </View>
 
-            <RectButton
-              style={{
-                flex: 1,
-                backgroundColor: "#60B246",
-                borderRadius: 10,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <RectButton style={styles.counterBtns}>
               <View style={{ flexDirection: "row", justifyContent: "center" }}>
                 <Text style={{ color: "white" }}>
                   {cartItems.totalItems} {cartItems.totalItems > 1 ? "items" : "item"}
                 </Text>
+
                 <Text style={{ marginLeft: 5, marginRight: 5, color: "white" }}>|</Text>
-                <Text style={{ color: "white" }}>$ {cartItems.totalPrice}</Text>
+
+                <Text style={{ color: "white" }}>
+                  {currency} {cartItems.totalPrice}
+                </Text>
               </View>
 
               <Text style={{ color: "white", textAlign: "center", fontWeight: "bold" }}>
@@ -151,6 +173,8 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     justifyContent: "center",
     alignItems: "center",
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
   },
   innerContainer: {
     flex: 1,
@@ -162,6 +186,9 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: "#f0eafe",
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
   },
   trendingLabel: {
     fontSize: 16,
@@ -189,14 +216,21 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
   },
   restaurantLogoContainer: {
-    backgroundColor: "blue",
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     borderRadius: 25,
+    overflow: "hidden",
   },
   hotelName: {
     fontSize: 16,
     fontWeight: "bold",
     marginLeft: 10,
+  },
+  counterBtns: {
+    flex: 1,
+    backgroundColor: "#60B246",
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
