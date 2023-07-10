@@ -46,7 +46,7 @@ function MenuScreen(props: MenuScreenProps) {
         />
       </View>
 
-      <View style={{ flex: 1, backgroundColor: "red" }}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={RESTAURANTS}
           keyExtractor={item => item.id}
