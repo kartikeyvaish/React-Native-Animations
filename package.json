@@ -10,6 +10,7 @@
     "test": "jest --clearCache && jest"
   },
   "dependencies": {
+    "@gorhom/bottom-sheet": "4",
     "@react-native-masked-view/masked-view": "0.2.8",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
@@ -19,6 +20,7 @@
     "expo": "~48.0.15",
     "expo-constants": "~14.2.1",
     "expo-haptics": "~12.2.1",
+    "expo-image": "~1.0.1",
     "expo-linear-gradient": "~12.1.2",
     "expo-navigation-bar": "~2.1.1",
     "expo-sensors": "~12.1.1",

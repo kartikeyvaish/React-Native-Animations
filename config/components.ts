@@ -133,6 +133,11 @@ const components: any = [
         id: "28",
         name: 'Fling Card Stack',
         screen: 'FlingCardStackScreen'
+    },
+    {
+        id: "29",
+        name: 'Swiggy Try Something New',
+        screen: 'SwiggyScreen'
     }
 ]
 
