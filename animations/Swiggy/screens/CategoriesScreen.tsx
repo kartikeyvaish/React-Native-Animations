@@ -12,11 +12,16 @@ import {
   Pressable,
 } from "react-native";
 import Animated, { FadeIn, Layout, SlideOutLeft } from "react-native-reanimated";
+import * as ExpoImage from "expo-image";
 
 // Local Imports (components/types/utils)
 import AppContainer from "../../../components/AppContainer";
 import FetchingRestaurantsLoader from "../components/FetchingRestaurantsLoader";
 import useThemeManager from "../../../hooks/useThemeManager";
+
+// Named imports
+import { getImages } from "../utils/helpers";
+import { NEW_RESTAURANTS } from "../mock/SwiggyMockData";
 import { ScreenHeight, ScreenWidth } from "../../../constants/Dimensions";
 import { SwiggyScreenProps } from "../navigation/NavigationProps";
 
@@ -132,12 +137,20 @@ function CategoriesScreen(props: SwiggyScreenProps<"CategoriesScreen">) {
   const [completedLoading, setCompletedLoading] = useState(false);
 
   useEffect(() => {
+    preloadImages();
+
     setTimeout(() => {
       setCompletedLoading(true);
     }, 1000);
 
     return () => {};
   }, []);
+
+  const preloadImages = () => {
+    let images = getImages(NEW_RESTAURANTS);
+
+    ExpoImage.Image.prefetch(images);
+  };
 
   const { Theme } = useThemeManager();
 
