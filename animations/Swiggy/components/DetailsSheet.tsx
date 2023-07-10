@@ -1,22 +1,17 @@
 // Packages Imports (from node_modules)
-import { useContext, useCallback, useMemo, useRef } from "react";
+import { useContext, useMemo, useRef } from "react";
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import Animated, { FadeIn, SlideInDown, SlideOutDown } from "react-native-reanimated";
-import { Image } from "expo-image";
 import { AntDesign } from "@expo/vector-icons";
 import BottomSheet from "@gorhom/bottom-sheet";
+import { Image } from "expo-image";
 
 // Local Imports (components/types/utils)
 import DetailsSheetContext from "../contexts/DetailsSheetContext";
 
-// interface for DetailsSheet component
-export interface DetailsSheetProps {}
-
 // functional component for DetailsSheet
-function DetailsSheet(props: DetailsSheetProps) {
-  // Destructuring props
-  const {} = props;
-
+function DetailsSheet() {
+  // Local States
   const { closeSheet, currentItem } = useContext(DetailsSheetContext);
 
   // ref
