@@ -27,8 +27,8 @@ function FoodSymbol(props: FoodSymbolProps) {
 
   // render
   return (
-    <View style={containerStyle}>
-      <View style={innerStyle} />
+    <View style={containerStyle} testID='food-symbol-container-test-id'>
+      <View style={innerStyle} testID='food-symbol-inner-container-test-id' />
     </View>
   );
 }
