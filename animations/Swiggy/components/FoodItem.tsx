@@ -12,12 +12,26 @@ import FoodSymbol from "./FoodSymbol";
 import { MenuItem } from "../types/Types";
 
 // interface for FoodItem component
-export interface FoodItemProps extends MenuItem {}
+export interface FoodItemProps extends MenuItem {
+  onIncrement?: () => void;
+  onDecrement?: () => void;
+  currentValue?: number;
+}
 
 // functional component for FoodItem
 function FoodItem(props: FoodItemProps) {
   // Destructuring props
-  const { isVegetarian, name, currency, price, image, isCustomizable } = props;
+  const {
+    isVegetarian,
+    name,
+    currency,
+    price,
+    image,
+    isCustomizable,
+    currentValue,
+    onIncrement,
+    onDecrement,
+  } = props;
 
   // render
   return (
@@ -35,7 +49,12 @@ function FoodItem(props: FoodItemProps) {
 
       <View style={styles.foodImageContainer}>
         <Image source={{ uri: image }} style={styles.foodItemImage} />
-        <CardItemCounter containerStyles={{ position: "absolute", bottom: -10 }} />
+        <CardItemCounter
+          containerStyles={{ position: "absolute", bottom: -10 }}
+          currentValue={currentValue}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
+        />
         {isCustomizable ? <AppText text='Customizable' style={styles.customizableText} /> : null}
       </View>
     </View>
