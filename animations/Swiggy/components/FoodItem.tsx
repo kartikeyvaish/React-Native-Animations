@@ -1,4 +1,5 @@
 // Packages Imports (from node_modules)
+import { useContext } from "react";
 import { View, StyleSheet, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -6,6 +7,7 @@ import { AntDesign } from "@expo/vector-icons";
 import AppText from "../../../components/AppText";
 import CardItemCounter from "./CardItemCounter";
 import Chips from "./Chip";
+import DetailsSheetContext from "../contexts/DetailsSheetContext";
 import FoodSymbol from "./FoodSymbol";
 
 // Named imports
@@ -33,6 +35,8 @@ function FoodItem(props: FoodItemProps) {
     onDecrement,
   } = props;
 
+  const { selectCurrentItem } = useContext(DetailsSheetContext);
+
   // render
   return (
     <View style={styles.container}>
@@ -42,7 +46,12 @@ function FoodItem(props: FoodItemProps) {
         <AppText text={name} size={18} style={{ fontWeight: "bold" }} marginTop={5} color='black' />
         <AppText text={`${currency} ${price}`} size={16} marginTop={10} color='black' />
 
-        <Chips name='More Details' containerStyles={styles.moreDetailsChipContainer} color='black'>
+        <Chips
+          name='More Details'
+          containerStyles={styles.moreDetailsChipContainer}
+          color='black'
+          onPress={() => selectCurrentItem(props)}
+        >
           <AntDesign name='right' size={10} color='black' style={{ marginTop: 2, marginLeft: 5 }} />
         </Chips>
       </View>
