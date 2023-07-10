@@ -1,7 +1,11 @@
 // Packages Imports (from node_modules)
 import { useState } from "react";
 import { StyleSheet, FlatList, View, Platform } from "react-native";
-import Animated, { SlideInRight } from "react-native-reanimated";
+import Animated, {
+  SlideInRight,
+  useAnimatedScrollHandler,
+  useSharedValue,
+} from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
 
 // Local Imports (components/types/utils)
@@ -9,6 +13,7 @@ import AppContainer from "../../../components/AppContainer";
 import Chips from "../components/Chip";
 import DetailsSheet from "../components/DetailsSheet";
 import DetailsSheetProvider from "../providers/DetailsSheetProvider";
+import Dots from "../components/Dots";
 import MenuScreenHeader from "../components/MenuScreenHeader";
 import RestaurantCard from "../components/RestaurantCard";
 
@@ -27,6 +32,8 @@ function MenuScreen(props: SwiggyScreenProps<"MenuScreen">) {
 
   const [selectedFilterItem, setSelectedFilterItem] = useState<FilterItemProps | null>(null);
 
+  const scrollProgress = useSharedValue(0);
+
   const triggerHaptics = () => {
     if (Platform.OS === "android") return;
 
@@ -37,6 +44,10 @@ function MenuScreen(props: SwiggyScreenProps<"MenuScreen">) {
     setSelectedFilterItem(item);
     triggerHaptics();
   };
+
+  const onScroll = useAnimatedScrollHandler(event => {
+    scrollProgress.value = event.contentOffset.x;
+  });
 
   // render
   return (
@@ -65,6 +76,17 @@ function MenuScreen(props: SwiggyScreenProps<"MenuScreen">) {
           />
         </View>
 
+        <View style={styles.dotsContainer}>
+          {new Array(NEW_RESTAURANTS.length * 2).fill(0).map((item, index) => (
+            <Dots
+              index={index}
+              scrollProgress={scrollProgress}
+              totalItems={NEW_RESTAURANTS.length * 2}
+              key={item.id + index.toString()}
+            />
+          ))}
+        </View>
+
         <Animated.View style={{ flex: 1 }}>
           <Animated.FlatList
             data={[...NEW_RESTAURANTS, ...NEW_RESTAURANTS]}
@@ -73,6 +95,7 @@ function MenuScreen(props: SwiggyScreenProps<"MenuScreen">) {
             renderItem={({ item }) => <RestaurantCard {...item} />}
             pagingEnabled={true}
             entering={SlideInRight.springify().delay(200)}
+            onScroll={onScroll}
           />
         </Animated.View>
 
@@ -88,4 +111,12 @@ export default MenuScreen;
 // styles for MenuScreen
 const styles = StyleSheet.create({
   container: {},
+  dotsContainer: {
+    marginTop: 15,
+    alignSelf: "center",
+    height: 30,
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

@@ -70,11 +70,11 @@ function CategoriesContainer(props: CategoriesContainerProps) {
               ? undefined
               : index <= 1
               ? Platform.OS === "ios"
-                ? 100
+                ? 50
                 : 50
-              : (ScreenHeight - 150) / 2
+              : (ScreenHeight - 250) / 2
           }
-          bottom={index === data.length - 1 ? 50 : undefined}
+          bottom={index === data.length - 1 ? 100 : undefined}
           layoutEnabled={layoutEnabled}
           imageSource={{ uri: item.restaurantLogo }}
           onPress={onItemPress}
