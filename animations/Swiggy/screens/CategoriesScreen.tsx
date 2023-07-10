@@ -22,6 +22,7 @@ import useThemeManager from "../../../hooks/useThemeManager";
 // Named imports
 import { getImages } from "../utils/helpers";
 import { NEW_RESTAURANTS } from "../mock/SwiggyMockData";
+import { Restaurant } from "../types/Types";
 import { ScreenHeight, ScreenWidth } from "../../../constants/Dimensions";
 import { SwiggyScreenProps } from "../navigation/NavigationProps";
 
@@ -37,10 +38,11 @@ export interface FoodCategoryItemProps {
   imageSource?: ImageSourcePropType;
   onPress?: () => void;
   loading?: boolean;
+  restaurantName: string;
 }
 
 export interface CategoriesContainerProps {
-  data: any;
+  data: Array<Restaurant>;
   placed?: boolean;
   layoutEnabled?: boolean;
   onItemPress?: () => void;
@@ -52,7 +54,7 @@ function CategoriesContainer(props: CategoriesContainerProps) {
 
   return (
     <Animated.View style={styles.frame}>
-      {data.map((item: any, index: number) => (
+      {data.map((item, index: number) => (
         <FoodCategoryItem
           key={index}
           atRequiredPlace={placed ? true : false}
@@ -74,8 +76,9 @@ function CategoriesContainer(props: CategoriesContainerProps) {
           }
           bottom={index === data.length - 1 ? 50 : undefined}
           layoutEnabled={layoutEnabled}
-          imageSource={{ uri: "https://cdn-icons-png.flaticon.com/512/1046/1046818.png" }}
+          imageSource={{ uri: item.restaurantLogo }}
           onPress={onItemPress}
+          restaurantName={item.restaurantName}
         />
       ))}
     </Animated.View>
@@ -84,8 +87,17 @@ function CategoriesContainer(props: CategoriesContainerProps) {
 
 function FoodCategoryItem(props: FoodCategoryItemProps) {
   // Destrcuturing props
-  const { left, top, bottom, atRequiredPlace, layoutEnabled, imageSource, onPress, loading } =
-    props;
+  const {
+    left,
+    top,
+    bottom,
+    atRequiredPlace,
+    layoutEnabled,
+    imageSource,
+    onPress,
+    loading,
+    restaurantName,
+  } = props;
 
   const { Theme } = useThemeManager();
 
@@ -120,9 +132,11 @@ function FoodCategoryItem(props: FoodCategoryItemProps) {
           </View>
         ) : null}
 
-        <Animated.Text style={[styles.foodName, { color: Theme.colors.text }]}>
-          Food Name
-        </Animated.Text>
+        {atRequiredPlace ? (
+          <Animated.Text style={[styles.foodName, { color: Theme.colors.text }]}>
+            {restaurantName}
+          </Animated.Text>
+        ) : null}
       </Pressable>
     </Animated.View>
   );
@@ -174,12 +188,12 @@ function CategoriesScreen(props: SwiggyScreenProps<"CategoriesScreen">) {
           showsVerticalScrollIndicator={false}
         >
           <CategoriesContainer
-            data={[1, 2, 3, 4, 5]}
+            data={NEW_RESTAURANTS}
             placed={completedLoading}
             layoutEnabled={true}
             onItemPress={toggleLoading}
           />
-          <CategoriesContainer data={[1, 2, 3, 4, 5]} onItemPress={toggleLoading} />
+          <CategoriesContainer data={NEW_RESTAURANTS} onItemPress={toggleLoading} />
         </Animated.ScrollView>
       )}
     </AppContainer>
@@ -209,9 +223,10 @@ const styles = StyleSheet.create({
   },
   foodName: {
     textAlign: "center",
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 15,
     marginTop: 10,
+    alignSelf: "center",
+    maxWidth: 100,
   },
   loader: {
     marginTop: 10,
