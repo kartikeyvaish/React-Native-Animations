@@ -25,11 +25,6 @@ function DetailsSheet(props: DetailsSheetProps) {
   // variables
   const snapPoints = useMemo(() => ["100%"], []);
 
-  // callbacks
-  const handleSheetChanges = useCallback((index: number) => {
-    console.log("handleSheetChanges", index);
-  }, []);
-
   if (currentItem === null) return null;
 
   // render
@@ -48,7 +43,6 @@ function DetailsSheet(props: DetailsSheetProps) {
           ref={bottomSheetRef}
           index={0}
           snapPoints={snapPoints}
-          onChange={handleSheetChanges}
           animateOnMount={false}
           handleIndicatorStyle={{ display: "none" }}
           handleStyle={{ display: "none" }}

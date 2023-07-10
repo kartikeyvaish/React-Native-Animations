@@ -7,7 +7,6 @@ export const getImages = (items: Array<Restaurant>) => {
     items.forEach(item => {
         images.push(item.restaurantLogo);
 
-        console.log(`Restaurant: ${item.restaurantName} has ${item.items.length} items`);
         item.items.forEach(item => {
             images.push(item.image);
         });
