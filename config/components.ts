@@ -138,6 +138,11 @@ const components: any = [
         id: "29",
         name: 'Swiggy Try Something New',
         screen: 'SwiggyScreen'
+    },
+    {
+        id: '30',
+        name: 'Delayed Text',
+        screen: 'DelayedText'
     }
 ]
 
