@@ -57,3 +57,5 @@ A repo for some React Native Animations that I've practiced. These animations ar
 ## [26. Metaball Animation](https://github.com/kartikeyvaish/Animations/tree/main/animations/MetaBallAnimation)
 
 ## [27. Fling Card Stack](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/FlingCardStack)
+
+## [28. Swiggy New UI Animation](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/Swiggy)
