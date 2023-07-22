@@ -29,6 +29,7 @@ import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import OnBoarding from "../animations/Onboarding/OnBoarding";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
+import ParookavilleFlingScreen from "../animations/ParookavilleFling/ParookavilleFlingScreen";
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import RippleEffect from "../animations/RippleEffect/RippleEffect";
@@ -74,6 +75,7 @@ function AppNavigator() {
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
+      <Stack.Screen name={"ParookavilleScreen"} component={ParookavilleFlingScreen} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
