@@ -61,3 +61,5 @@ A repo for some React Native Animations that I've practiced. These animations ar
 ## [28. Swiggy New UI Animation](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/Swiggy)
 
 ## [29. Delayed Text Animation](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/DelayedText)
+
+## [30. Parookaville Fling Animated List](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/ParookavilleFling)
