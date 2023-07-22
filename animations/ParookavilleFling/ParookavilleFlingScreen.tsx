@@ -77,7 +77,11 @@ function ParookavilleFlingScreen() {
 
       <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.container}>
         <GestureDetector gesture={Gesture.Exclusive(flingUpAction, flingDownAction)}>
-          <Animated.View style={styles.container} pointerEvents='box-none'>
+          <Animated.View
+            style={styles.container}
+            pointerEvents='box-none'
+            testID='parookaville-list-container'
+          >
             {data.map((item, index) => (
               <FlingItem
                 key={index}
