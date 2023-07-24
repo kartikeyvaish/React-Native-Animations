@@ -28,6 +28,7 @@ import MenuToggler from "../animations/MenuToggler/MenuToggler";
 import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import OnBoarding from "../animations/Onboarding/OnBoarding";
+import OlaLoaderScreen from "../animations/OlaLoader/OlaLoaderScreen";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
 import ParookavilleFlingScreen from "../animations/ParookavilleFling/ParookavilleFlingScreen";
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
@@ -39,7 +40,6 @@ import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
-import OlaLoaderScreen from "../animations/OlaLoader/OlaLoaderScreen";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
