@@ -39,6 +39,7 @@ import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
+import OlaLoaderScreen from "../animations/OlaLoader/OlaLoaderScreen";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -74,6 +75,7 @@ function AppNavigator() {
       <Stack.Screen name={"MetaballAnimation"} component={MetaballAnimation} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
+      <Stack.Screen name={"OlaLoaderScreen"} component={OlaLoaderScreen} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
       <Stack.Screen name={"ParookavilleScreen"} component={ParookavilleFlingScreen} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />

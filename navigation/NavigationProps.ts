@@ -26,6 +26,7 @@ export type AppStackParamsList = {
     MetaballAnimation: undefined;
     MoviesSlider: undefined;
     OnBoarding: undefined;
+    OlaLoaderScreen: undefined;
     ParallaxCaraousel: undefined;
     ParookavilleScreen: undefined;
     ProgressDots: undefined;

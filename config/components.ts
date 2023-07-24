@@ -148,6 +148,11 @@ const components: any = [
         id: '31',
         name: 'Parookaville Fling List',
         screen: 'ParookavilleScreen'
+    },
+    {
+        id: '32',
+        name: 'Ola Loader',
+        screen: 'OlaLoaderScreen'
     }
 ]
 
