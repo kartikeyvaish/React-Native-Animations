@@ -28,6 +28,7 @@ import MenuToggler from "../animations/MenuToggler/MenuToggler";
 import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import OnBoarding from "../animations/Onboarding/OnBoarding";
+import OlaLoaderScreen from "../animations/OlaLoader/OlaLoaderScreen";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
 import ParookavilleFlingScreen from "../animations/ParookavilleFling/ParookavilleFlingScreen";
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
@@ -74,6 +75,7 @@ function AppNavigator() {
       <Stack.Screen name={"MetaballAnimation"} component={MetaballAnimation} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
+      <Stack.Screen name={"OlaLoaderScreen"} component={OlaLoaderScreen} />
       <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
       <Stack.Screen name={"ParookavilleScreen"} component={ParookavilleFlingScreen} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />

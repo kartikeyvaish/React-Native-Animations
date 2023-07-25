@@ -63,3 +63,5 @@ A repo for some React Native Animations that I've practiced. These animations ar
 ## [29. Delayed Text Animation](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/DelayedText)
 
 ## [30. Parookaville Fling Animated List](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/ParookavilleFling)
+
+## [31. Ola Loader](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/OlaLoader)
