@@ -76,7 +76,7 @@ function AppNavigator() {
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
       <Stack.Screen name={"OlaLoaderScreen"} component={OlaLoaderScreen} />
-      <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
+      <Stack.Screen name={"ParallaxCarousel"} component={ParallaxCaraousel} />
       <Stack.Screen name={"ParookavilleScreen"} component={ParookavilleFlingScreen} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />

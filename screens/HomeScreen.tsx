@@ -1,11 +1,12 @@
 // Packages Imports
-import { FlatList, StyleSheet } from "react-native";
-import Animated, { SlideInRight } from "react-native-reanimated";
+import { FlatList } from "react-native";
 
-// Local Imports
+// Component Imports
 import AppContainer from "../components/AppContainer";
-import components from "../config/components";
 import MenuCard from "../components/MenuCard";
+
+// Constants
+import components from "../config/components";
 
 // Named Imports
 import { AppScreenProps } from "../navigation/NavigationProps";
@@ -14,19 +15,21 @@ import { AppScreenProps } from "../navigation/NavigationProps";
 function HomeScreen({ navigation }: AppScreenProps<"HomeScreen">) {
   // render
   return (
-    <AppContainer style={styles.container}>
+    <AppContainer>
       <FlatList
         data={components}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
+        numColumns={2}
         renderItem={({ item, index }) => (
-          <Animated.View entering={SlideInRight.delay(index * 20).springify()}>
-            <MenuCard
-              title={item.name}
-              onPress={() => navigation.navigate(item.screen)}
-              key={item.id}
-            />
-          </Animated.View>
+          <MenuCard
+            title={item.name}
+            onPress={() => navigation.navigate(item.screen)}
+            key={item.id}
+            index={index}
+            colors={item.colors}
+            description={item.description}
+          />
         )}
       />
     </AppContainer>
@@ -35,10 +38,3 @@ function HomeScreen({ navigation }: AppScreenProps<"HomeScreen">) {
 
 // exports
 export default HomeScreen;
-
-// styles
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-  },
-});
