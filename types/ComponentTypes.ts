@@ -42,6 +42,9 @@ export interface ChildrenProps { children?: React.ReactNode; }
 export interface MenuCardProps {
     title: string;
     onPress?: ((pointerInside: boolean) => void) | undefined;
+    index: number;
+    colors: string[]
+    description?: string;
 }
 
 // seperate margin props
