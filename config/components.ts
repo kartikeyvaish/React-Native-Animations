@@ -215,6 +215,13 @@ const components: any = [
         screen: 'OlaLoaderScreen',
         colors: ['#DA1B60', '#E33649', "#F87512"],
         description: "Replica of Ola Loading Screen. Open the animation to search for a ride."
+    },
+    {
+        id: '33',
+        name: 'Draggable Popover',
+        screen: 'DraggablePopOverScreen',
+        colors: ['#05C1E2', "#A86EF7"],
+        description: 'A draggable popover which can be dragged to any corner of the screen. Longpress on the popover to activate menu.'
     }
 ]
 
