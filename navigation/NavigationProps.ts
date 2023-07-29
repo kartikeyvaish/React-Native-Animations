@@ -18,6 +18,7 @@ export type AppStackParamsList = {
     ColorPicker: undefined;
     CreditCard: undefined;
     DelayedText: undefined;
+    DraggablePopOverScreen: undefined;
     FlingCardStackScreen: undefined;
     FlipCard: undefined;
     GridMagnification: undefined;
