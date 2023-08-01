@@ -17,7 +17,7 @@
     "@shopify/react-native-skia": "0.1.172",
     "@testing-library/react-native": "^12.1.2",
     "dayjs": "^1.11.7",
-    "expo": "~48.0.15",
+    "expo": "~49.0.6",
     "expo-constants": "~14.2.1",
     "expo-haptics": "~12.2.1",
     "expo-image": "~1.0.1",
