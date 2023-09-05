@@ -38,10 +38,10 @@ function TallyCounter(props: TallyCounterProps) {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='tally-counter-component'>
       <View style={[styles.tallyCounterContainer, { height, width }]}>
         <AnimatedPressable style={[styles.icon, AnimatedMinusIconStyles]} onPress={DecreaseCounter}>
-          <AntDesign name="minus" size={24} color="white" />
+          <AntDesign name='minus' size={24} color='white' />
         </AnimatedPressable>
 
         <PanGestureHandler onGestureEvent={AnimatedScrollHandler}>
@@ -53,7 +53,7 @@ function TallyCounter(props: TallyCounterProps) {
         </PanGestureHandler>
 
         <AnimatedPressable style={[styles.icon, AnimatedPlusIconStyles]} onPress={IncreaseCounter}>
-          <AntDesign name="plus" size={24} color="white" />
+          <AntDesign name='plus' size={24} color='white' />
         </AnimatedPressable>
       </View>
     </View>

@@ -51,7 +51,7 @@ function CreditCard() {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='credit-card-component'>
       <GradientCard width={GRADIENT_WIDTH} height={GRADIENT_HEIGHT} />
 
       <GestureDetector gesture={gesture}>

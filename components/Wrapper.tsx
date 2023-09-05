@@ -1,11 +1,14 @@
 // Packages Imports
+import { StatusBar } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "react-native";
 
 // Local Imports
-import { WrapperProps } from "../types/ComponentTypes";
+import SafeAreaProvider from "./SafeAreaProvider";
 import useThemeManager from "../hooks/useThemeManager";
+
+// Named Imports
+import { WrapperProps } from "../types/ComponentTypes";
 
 // function component for Wrapper
 function Wrapper(props: WrapperProps) {
@@ -26,7 +29,9 @@ function Wrapper(props: WrapperProps) {
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: Theme.colors.background }}>
       {/* StatusBar */}
       <StatusBar barStyle={barStyle} backgroundColor={barBackgroundColor} animated={true} />
-      <NavigationContainer theme={Theme}>{children}</NavigationContainer>
+      <NavigationContainer theme={Theme}>
+        <SafeAreaProvider>{children}</SafeAreaProvider>
+      </NavigationContainer>
     </GestureHandlerRootView>
   );
 }

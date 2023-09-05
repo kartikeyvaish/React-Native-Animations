@@ -65,7 +65,11 @@ const ColorPickerComponent: React.FC<ColorPickerComponentProps> = ({
 
   const rStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ translateX: adjustedTranslateX.value }, { scale: scale.value }, { translateY: translateY.value }],
+      transform: [
+        { translateX: adjustedTranslateX.value },
+        { scale: scale.value },
+        { translateY: translateY.value },
+      ],
     };
   });
 
@@ -82,7 +86,7 @@ const ColorPickerComponent: React.FC<ColorPickerComponentProps> = ({
   });
 
   return (
-    <TapGestureHandler onGestureEvent={tapGestureEvent}>
+    <TapGestureHandler onGestureEvent={tapGestureEvent} testID='color-picker-component'>
       <Animated.View>
         <PanGestureHandler onGestureEvent={panGestureEvent}>
           <Animated.View style={{ justifyContent: "center" }}>

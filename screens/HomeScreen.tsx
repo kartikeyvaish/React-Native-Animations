@@ -1,26 +1,34 @@
 // Packages Imports
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList } from "react-native";
 
-// Local Imports
+// Component Imports
 import AppContainer from "../components/AppContainer";
-import { AppScreenProps } from "../navigation/NavigationProps";
-import components from "../config/components";
 import MenuCard from "../components/MenuCard";
+
+// Constants
+import components from "../config/components";
+
+// Named Imports
+import { AppScreenProps } from "../navigation/NavigationProps";
 
 // function component for HomeScreen
 function HomeScreen({ navigation }: AppScreenProps<"HomeScreen">) {
   // render
   return (
-    <AppContainer style={styles.container}>
+    <AppContainer>
       <FlatList
         data={components}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => (
+        numColumns={2}
+        renderItem={({ item, index }) => (
           <MenuCard
             title={item.name}
             onPress={() => navigation.navigate(item.screen)}
             key={item.id}
+            index={index}
+            colors={item.colors}
+            description={item.description}
           />
         )}
       />
@@ -30,10 +38,3 @@ function HomeScreen({ navigation }: AppScreenProps<"HomeScreen">) {
 
 // exports
 export default HomeScreen;
-
-// styles
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-  },
-});

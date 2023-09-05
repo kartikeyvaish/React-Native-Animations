@@ -43,13 +43,17 @@ interface RippleCircleButtonProps {
 }
 
 // Functional component for a ripple circle button
-function RippleCircleButton(props: RippleCircleButtonProps) {
+export function RippleCircleButton(props: RippleCircleButtonProps) {
   // Destructuring props
   const { children, onPress } = props;
 
   return (
-    <View style={styles.digitContainer}>
-      <RectButton style={styles.rippleButton} onPress={onPress}>
+    <View style={styles.digitContainer} testID='animated-ripple-button-otp'>
+      <RectButton
+        style={styles.rippleButton}
+        onPress={onPress}
+        testID='animated-input-ripple-circle-button'
+      >
         {children}
       </RectButton>
     </View>
@@ -57,13 +61,13 @@ function RippleCircleButton(props: RippleCircleButtonProps) {
 }
 
 // Function component for a digit item
-function DigitItem(props: DigitItemProps) {
+export function DigitItem(props: DigitItemProps) {
   // Destrcuturing props
   const { digit, onPress } = props;
 
   return (
     <RippleCircleButton onPress={onPress}>
-      <AppText text={digit} style={styles.digitText} />
+      <AppText text={digit} style={styles.digitText} testID={`digit-${digit}`} />
     </RippleCircleButton>
   );
 }
@@ -114,7 +118,7 @@ function AnimatedOTPInput() {
 
   // render
   return (
-    <View>
+    <View testID='animated-otp-input'>
       <View style={styles.otpContainer}>
         {new Array(OTP_LENGTH).fill(0).map((_, index) => (
           <MotiView

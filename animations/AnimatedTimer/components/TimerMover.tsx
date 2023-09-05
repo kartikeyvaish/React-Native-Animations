@@ -9,12 +9,13 @@ import ColorPallete from "../../../utils/ColorPallete";
 export interface TimerMoverProps {
   visible?: boolean;
   transalteY: SharedValue<number>;
+  testID?: string;
 }
 
 // function component for TimerMover
 function TimerMover(props: TimerMoverProps) {
   // Destructuring props
-  const { visible, transalteY } = props;
+  const { visible, transalteY, testID } = props;
 
   // animated styles for the timer container
   const animatedStyles = useAnimatedStyle(() => {
@@ -24,7 +25,9 @@ function TimerMover(props: TimerMoverProps) {
   });
 
   // render
-  return visible ? <Animated.View style={[styles.timerContainer, animatedStyles]} /> : null;
+  return visible ? (
+    <Animated.View testID={testID} style={[styles.timerContainer, animatedStyles]} />
+  ) : null;
 }
 
 // exports

@@ -17,6 +17,9 @@ export type AppStackParamsList = {
     ClockLoader: undefined;
     ColorPicker: undefined;
     CreditCard: undefined;
+    DelayedText: undefined;
+    DraggablePopOverScreen: undefined;
+    FlingCardStackScreen: undefined;
     FlipCard: undefined;
     GridMagnification: undefined;
     ListRemover: undefined;
@@ -24,11 +27,14 @@ export type AppStackParamsList = {
     MetaballAnimation: undefined;
     MoviesSlider: undefined;
     OnBoarding: undefined;
-    ParallaxCaraousel: undefined;
+    OlaLoaderScreen: undefined;
+    ParallaxCarousel: undefined;
+    ParookavilleScreen: undefined;
     ProgressDots: undefined;
     Ringing: undefined;
     RippleEffect: undefined;
     ShakeItUp: undefined;
+    SwiggyScreen: undefined;
     TallyCounter: undefined;
     ThemeChanger: undefined;
     VolumeSlider: undefined;

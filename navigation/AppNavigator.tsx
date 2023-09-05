@@ -19,22 +19,28 @@ import Clock from "../animations/Clock/Clock";
 import ClockLoader from "../animations/ClockLoader/ClockLoader";
 import ColorPicker from "../animations/ColorPicker/ColorPicker";
 import CreditCard from "../animations/CreditCard/CreditCard";
+import DelayedText from "../animations/DelayedText/DelayedText";
+import DraggablePopOverScreen from "../animations/DraggablePopover/DraggablePopOverScreen";
+import FlingCardStackScreen from "../animations/FlingCardStack/FlingCardStackScreen";
 import FlipCard from "../animations/FlipCard/FlipCard";
 import GridMagnification from "../animations/Grid Magnification/GridMagnification";
 import ListRemover from "../animations/ListRemover/ListRemover";
 import MenuToggler from "../animations/MenuToggler/MenuToggler";
+import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 import MoviesSlider from "../animations/MoviesSlider/MoviesSlider";
 import OnBoarding from "../animations/Onboarding/OnBoarding";
+import OlaLoaderScreen from "../animations/OlaLoader/OlaLoaderScreen";
 import ParallaxCaraousel from "../animations/ParallaxCaraousel/ParallaxCaraousel";
+import ParookavilleFlingScreen from "../animations/ParookavilleFling/ParookavilleFlingScreen";
 import ProgressDotsScreen from "../animations/ProgressDots/ProgressDotsScreen";
 import Ringing from "../animations/Ringing/Ringing";
 import RippleEffect from "../animations/RippleEffect/RippleEffect";
 import ShakeItUp from "../animations/ShakeItUp/ShakeItUp";
+import SwiggyNavigator from "../animations/Swiggy/navigation/SwiggyStackNavigator";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
 import WhatsAppMic from "../animations/WhatsAppMic/WhatsAppMic";
-import MetaballAnimation from "../animations/MetaBallAnimation/Metaball";
 
 // Create a Stack Navigator
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -61,6 +67,9 @@ function AppNavigator() {
       <Stack.Screen name={"ClockLoader"} component={ClockLoader} />
       <Stack.Screen name={"ColorPicker"} component={ColorPicker} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
+      <Stack.Screen name={"DelayedText"} component={DelayedText} />
+      <Stack.Screen name={"DraggablePopOverScreen"} component={DraggablePopOverScreen} />
+      <Stack.Screen name={"FlingCardStackScreen"} component={FlingCardStackScreen} />
       <Stack.Screen name={"FlipCard"} component={FlipCard} />
       <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
@@ -68,11 +77,14 @@ function AppNavigator() {
       <Stack.Screen name={"MetaballAnimation"} component={MetaballAnimation} />
       <Stack.Screen name={"MoviesSlider"} component={MoviesSlider} />
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
-      <Stack.Screen name={"ParallaxCaraousel"} component={ParallaxCaraousel} />
+      <Stack.Screen name={"OlaLoaderScreen"} component={OlaLoaderScreen} />
+      <Stack.Screen name={"ParallaxCarousel"} component={ParallaxCaraousel} />
+      <Stack.Screen name={"ParookavilleScreen"} component={ParookavilleFlingScreen} />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
       <Stack.Screen name={"ShakeItUp"} component={ShakeItUp} />
+      <Stack.Screen name={"SwiggyScreen"} component={SwiggyNavigator} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"ThemeChanger"} component={ThemeChanger} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
