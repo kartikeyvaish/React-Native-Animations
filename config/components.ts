@@ -222,6 +222,13 @@ const components: any = [
         screen: 'DraggablePopOverScreen',
         colors: ['#05C1E2', "#A86EF7"],
         description: 'A draggable popover which can be dragged to any corner of the screen. Longpress on the popover to activate menu.'
+    },
+    {
+        id: '34',
+        name: 'Animated Dropdown',
+        screen: 'AnimatedDropdown',
+        colors: ['#05C1E2', "#A86EF7"],
+        description: 'A dropdown with animated transitions.'
     }
 ]
 
