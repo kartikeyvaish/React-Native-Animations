@@ -22,7 +22,7 @@
     "expo-asset": "~8.10.1",
     "expo-constants": "~14.4.2",
     "expo-haptics": "~12.4.0",
-    "expo-image": "~1.3.2",
+    "expo-image": "~1.5.1",
     "expo-linear-gradient": "~12.3.0",
     "expo-navigation-bar": "~2.3.0",
     "expo-sensors": "~12.3.0",
