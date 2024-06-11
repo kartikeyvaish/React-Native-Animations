@@ -36,6 +36,7 @@ export type AppStackParamsList = {
     RippleEffect: undefined;
     ShakeItUp: undefined;
     SwiggyScreen: undefined;
+    SlideToPay: undefined;
     TallyCounter: undefined;
     ThemeChanger: undefined;
     VolumeSlider: undefined;
