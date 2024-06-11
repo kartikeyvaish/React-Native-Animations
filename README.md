@@ -69,3 +69,5 @@ A repo for some React Native Animations that I've practiced. These animations ar
 ## [32. Draggable Popover](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/DraggablePopover)
 
 ## [33. Animated Dropdown](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/AnimatedDropdown)
+
+## [34. Slide To Pay](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/SlideToPay)
