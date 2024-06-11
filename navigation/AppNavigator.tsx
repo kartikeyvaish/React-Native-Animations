@@ -38,6 +38,7 @@ import Ringing from "../animations/Ringing/Ringing";
 import RippleEffect from "../animations/RippleEffect/RippleEffect";
 import ShakeItUp from "../animations/ShakeItUp/ShakeItUp";
 import SwiggyNavigator from "../animations/Swiggy/navigation/SwiggyStackNavigator";
+import SlideToPay from "../animations/SlideToPay";
 import TallyCounter from "../animations/TallyCounter/TallyCounter";
 import ThemeChanger from "../animations/ThemeChanger/ThemeChanger";
 import VolumeSlider from "../animations/VolumeSlider/VolumeSlider";
@@ -58,7 +59,10 @@ function AppNavigator() {
     <Stack.Navigator screenOptions={screenOptions}>
       {/* App Screens */}
       <Stack.Screen name={"HomeScreen"} component={HomeScreen} />
-      <Stack.Screen name={"AnimatedDropdown"} component={AnimatedDropdownScreen} />
+      <Stack.Screen
+        name={"AnimatedDropdown"}
+        component={AnimatedDropdownScreen}
+      />
       <Stack.Screen name={"AnimatedFlatlist"} component={AnimatedFlatList} />
       <Stack.Screen name={"AnimatedOTPInput"} component={AnimatedOTPInput} />
       <Stack.Screen name={"AnimatingSlider"} component={AnimatingSlider} />
@@ -70,8 +74,14 @@ function AppNavigator() {
       <Stack.Screen name={"ColorPicker"} component={ColorPicker} />
       <Stack.Screen name={"CreditCard"} component={CreditCard} />
       <Stack.Screen name={"DelayedText"} component={DelayedText} />
-      <Stack.Screen name={"DraggablePopOverScreen"} component={DraggablePopOverScreen} />
-      <Stack.Screen name={"FlingCardStackScreen"} component={FlingCardStackScreen} />
+      <Stack.Screen
+        name={"DraggablePopOverScreen"}
+        component={DraggablePopOverScreen}
+      />
+      <Stack.Screen
+        name={"FlingCardStackScreen"}
+        component={FlingCardStackScreen}
+      />
       <Stack.Screen name={"FlipCard"} component={FlipCard} />
       <Stack.Screen name={"GridMagnification"} component={GridMagnification} />
       <Stack.Screen name={"ListRemover"} component={ListRemover} />
@@ -81,12 +91,16 @@ function AppNavigator() {
       <Stack.Screen name={"OnBoarding"} component={OnBoarding} />
       <Stack.Screen name={"OlaLoaderScreen"} component={OlaLoaderScreen} />
       <Stack.Screen name={"ParallaxCarousel"} component={ParallaxCaraousel} />
-      <Stack.Screen name={"ParookavilleScreen"} component={ParookavilleFlingScreen} />
+      <Stack.Screen
+        name={"ParookavilleScreen"}
+        component={ParookavilleFlingScreen}
+      />
       <Stack.Screen name={"ProgressDots"} component={ProgressDotsScreen} />
       <Stack.Screen name={"Ringing"} component={Ringing} />
       <Stack.Screen name={"RippleEffect"} component={RippleEffect} />
       <Stack.Screen name={"ShakeItUp"} component={ShakeItUp} />
       <Stack.Screen name={"SwiggyScreen"} component={SwiggyNavigator} />
+      <Stack.Screen name={"SlideToPay"} component={SlideToPay} />
       <Stack.Screen name={"TallyCounter"} component={TallyCounter} />
       <Stack.Screen name={"ThemeChanger"} component={ThemeChanger} />
       <Stack.Screen name={"VolumeSlider"} component={VolumeSlider} />
