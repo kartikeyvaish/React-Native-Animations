@@ -17,7 +17,7 @@ function SlideToPay(props: SlideToPayProps) {
 
   // render
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID="slide-to-pay">
       <Slider key={resetCounter.toString()} />
 
       <View style={styles.resetButtonContainer}>
