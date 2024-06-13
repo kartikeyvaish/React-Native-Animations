@@ -239,7 +239,7 @@ const components: any = [
     },
     {
         id: '36',
-        name: 'AirbnbTimerScreen',
+        name: 'Airbnb Timer',
         screen: 'AirbnbTimerScreen',
         colors: ['#05C1E2', "#A86EF7"],
         description: 'Airbnb like timer in a card. Explore Section'
