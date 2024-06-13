@@ -7,6 +7,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 export type AppStackParamsList = {
     // App Stack Screens
     HomeScreen: undefined;
+    AirbnbTimerScreen: undefined;
     AnimatedDropdown: undefined;
     AnimatedFlatlist: undefined;
     AnimatedOTPInput: undefined;

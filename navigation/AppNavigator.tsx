@@ -9,6 +9,7 @@ import { AppStackParamsList } from "./NavigationProps";
 
 // Screen imports
 import HomeScreen from "./../screens/HomeScreen";
+import AirbnbTimerScreen from "../animations/AirbnbTimer";
 import AnimatedDropdownScreen from "../animations/AnimatedDropdown/AnimatedDropdownScreen";
 import AnimatedFlatList from "../animations/AnimatedFlatlist/AnimatedFlatList";
 import AnimatedOTPInput from "../animations/AnimatedOTPInput/AnimatedOTPInputScreen";
@@ -59,6 +60,7 @@ function AppNavigator() {
     <Stack.Navigator screenOptions={screenOptions}>
       {/* App Screens */}
       <Stack.Screen name={"HomeScreen"} component={HomeScreen} />
+      <Stack.Screen name={"AirbnbTimerScreen"} component={AirbnbTimerScreen} />
       <Stack.Screen
         name={"AnimatedDropdown"}
         component={AnimatedDropdownScreen}
