@@ -18,7 +18,7 @@ function AirbnbTimerScreen(props: AirbnbTimerScreenProps) {
   // render
   return (
     <AppContainer style={styles.container}>
-      <View style={styles.card}>
+      <View style={styles.card} testID="airbnb-timer-card">
         <Image
           source={{ uri: constants.CARD_WALLPAPER }}
           style={styles.image}
