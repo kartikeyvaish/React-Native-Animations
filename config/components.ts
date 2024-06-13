@@ -236,6 +236,13 @@ const components: any = [
         screen: 'SlideToPay',
         colors: ['#DA1B60', '#E33649', "#F87512"],
         description: 'A slide to pay screen with animated transitions.'
+    },
+    {
+        id: '36',
+        name: 'Airbnb Timer',
+        screen: 'AirbnbTimerScreen',
+        colors: ['#05C1E2', "#A86EF7"],
+        description: 'Airbnb like timer in a card. Explore Section'
     }
 ]
 

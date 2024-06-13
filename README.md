@@ -71,3 +71,5 @@ A repo for some React Native Animations that I've practiced. These animations ar
 ## [33. Animated Dropdown](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/AnimatedDropdown)
 
 ## [34. Slide To Pay](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/SlideToPay)
+
+## [35. Airbnb Timer](https://github.com/kartikeyvaish/React-Native-Animations/tree/main/animations/AirbnbTimer)
